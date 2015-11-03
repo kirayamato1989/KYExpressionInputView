@@ -239,10 +239,6 @@
         layout.numberOfRow = numberOfRow;
     }
     
-    if ([view respondsToSelector:@selector(updateUI)]) {
-        [view updateUI];
-    }
-    
     self.currentDisplayExpressionViewContainer.hidden = YES;
     self.currentDisplayExpressionViewContainer = view;
     self.currentDisplayExpressionViewContainer.hidden = NO;

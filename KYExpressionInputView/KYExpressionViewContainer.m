@@ -139,6 +139,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    [self.layout prepareLayout];
+    
     [self.expressionCollectionView reloadData];
     
     self.pageControl.numberOfPages = self.layout.numberOfPage;
@@ -231,8 +233,5 @@
     [self.expressionCollectionView insertItemsAtIndexPaths:@[indexPath]];
 }
 
-- (void)updateUI {
-    [self setNeedsLayout];
-}
 
 @end

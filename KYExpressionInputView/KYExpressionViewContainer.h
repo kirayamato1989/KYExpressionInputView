@@ -47,6 +47,5 @@ typedef NS_ENUM(NSUInteger, KYExpressionViewContainerType) {
 
 - (KYExpressionContainerLayout *)layout;
 
-- (void)updateUI;
 
 @end
