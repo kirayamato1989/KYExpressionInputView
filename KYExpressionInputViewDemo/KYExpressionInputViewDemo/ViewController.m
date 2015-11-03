@@ -42,7 +42,7 @@
         [emojiItems addObject:item];
     }
     
-    [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:5 column:10 itemSize:CGSizeMake(36, 36) itemSpacing:6];
+    [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:4 column:8 itemSize:CGSizeMake(36, 36) itemSpacing:6];
     
     
     NSString *iconPath = [kExpressionBundle pathForResource:@"icon" ofType:@"jpg"];
