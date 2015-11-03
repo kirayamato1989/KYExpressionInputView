@@ -24,6 +24,8 @@ for (NSString *text in array) {
 
 [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:5 column:10 itemSize:CGSizeMake(36, 36) itemSpacing:6];
 
+![image](https://github.com/kirayamato1989/KYExpressionInputView/blob/master/KYExpressionInputViewDemo/KYExpressionInputViewDemo/QQ20151104-0@2x.png?raw=true)
+
 3.添加图片
 
 NSMutableArray *items = [NSMutableArray array];
@@ -43,3 +45,8 @@ for (int i = 0; i < 100; i++) {
 NSString *iconPath = [kExpressionBundle pathForResource:@"icon" ofType:@"jpg"];
 
 [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
+
+![image](https://github.com/kirayamato1989/KYExpressionInputView/blob/master/KYExpressionInputViewDemo/KYExpressionInputViewDemo/QQ20151104-1@2x.png?raw=true)
+
+![image]()
+
