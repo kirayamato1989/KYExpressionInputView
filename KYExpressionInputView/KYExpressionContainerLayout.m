@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSMutableArray *cache;
 
+@property (nonatomic, assign) CGSize cachedCollectionViewSize;
+
 @end
 
 @implementation KYExpressionContainerLayout
@@ -30,7 +32,9 @@
     NSUInteger numberOfItem = [self.collectionView numberOfItemsInSection:0];
     
     // 个数有改变
-    if (self.cache.count != numberOfItem) {
+    if (self.cache.count != numberOfItem || !CGSizeEqualToSize(self.cachedCollectionViewSize, self.collectionView.bounds.size)) {
+        
+        self.cachedCollectionViewSize = self.collectionView.bounds.size;
         
         // 为空
         if (!self.cache) {

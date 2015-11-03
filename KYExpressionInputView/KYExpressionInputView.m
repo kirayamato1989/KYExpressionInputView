@@ -207,6 +207,7 @@
         
         
         KYExpressionViewContainer *container = [[KYExpressionViewContainer alloc] initWithFrame:self.containerView.bounds];
+        container.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         
         container.layout.itemSize = itemSize;
         container.layout.itemSpacing = itemSpacing;

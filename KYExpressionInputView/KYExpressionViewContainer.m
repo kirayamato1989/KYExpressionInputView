@@ -7,8 +7,6 @@
 //
 
 #import "KYExpressionViewContainer.h"
-#import "CTAssetsPickerController.h"
-#import "KYExpressionDeleteController.h"
 #import "KYExpressionInputView.h"
 #import "KYExpressionItem.h"
 #import "KYExpressionContainerLayout.h"
@@ -65,6 +63,8 @@
         _imageView.animationImages = nil;
         [_imageView stopAnimating];
         
+        _imageView.contentMode = UIViewContentModeScaleAspectFill;
+        
         _textLabel.hidden = YES;
         _textLabel.text = nil;
         
@@ -90,6 +90,7 @@
             case kExpressionDataTypeDelete:
                 [self showBorder:NO];
                 _imageView.hidden = NO;
+                _imageView.contentMode = UIViewContentModeScaleAspectFit;
                 _imageView.image = [expressionItem image];
             default:
                 break;
@@ -137,6 +138,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    
+    [self.expressionCollectionView reloadData];
     
     self.pageControl.numberOfPages = self.layout.numberOfPage;
 }
@@ -229,8 +232,6 @@
 }
 
 - (void)updateUI {
-    [self.layout prepareLayout];
-    [self.expressionCollectionView reloadData];
     [self setNeedsLayout];
 }
 

@@ -46,8 +46,10 @@
 }
 
 + (instancetype)deleteItem {
-    NSString *path = [kExpressionBundle pathForResource:@"expression_delete@2x" ofType:@"png"];
-    KYExpressionItem *item = [self itemWithImage:[UIImage imageWithContentsOfFile:path] url:nil];
+    NSString *path = [kExpressionBundle pathForResource:@"expression_delete" ofType:@"png"];
+    UIImage *image = [UIImage imageWithContentsOfFile:path];
+    image = [UIImage imageWithCGImage:image.CGImage scale:[UIScreen mainScreen].scale orientation:image.imageOrientation];
+    KYExpressionItem *item = [self itemWithImage:image url:nil];
     item.dataType = kExpressionDataTypeDelete;
     return item;
 }
