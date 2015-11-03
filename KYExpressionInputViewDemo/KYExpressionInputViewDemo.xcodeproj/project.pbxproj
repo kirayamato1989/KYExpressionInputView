@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D6EE8A0B1BE894F700855E29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A0A1BE894F700855E29 /* main.m */; };
+		D6EE8A0E1BE894F700855E29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A0D1BE894F700855E29 /* AppDelegate.m */; };
+		D6EE8A111BE894F700855E29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A101BE894F700855E29 /* ViewController.m */; };
+		D6EE8A141BE894F700855E29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6EE8A121BE894F700855E29 /* Main.storyboard */; };
+		D6EE8A161BE894F700855E29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6EE8A151BE894F700855E29 /* Assets.xcassets */; };
+		D6EE8A191BE894F700855E29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6EE8A171BE894F700855E29 /* LaunchScreen.storyboard */; };
+		D6EE8A461BE8951300855E29 /* KYExpressionBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D6EE8A241BE8951300855E29 /* KYExpressionBundle.bundle */; };
+		D6EE8A471BE8951300855E29 /* KYExpressionContainerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A271BE8951300855E29 /* KYExpressionContainerLayout.m */; };
+		D6EE8A491BE8951300855E29 /* KYExpressionInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A2C1BE8951300855E29 /* KYExpressionInputView.m */; };
+		D6EE8A4A1BE8951300855E29 /* KYExpressionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A2E1BE8951300855E29 /* KYExpressionItem.m */; };
+		D6EE8A4B1BE8951300855E29 /* KYExpressionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A311BE8951300855E29 /* KYExpressionStore.m */; };
+		D6EE8A4C1BE8951300855E29 /* KYExpressionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A331BE8951300855E29 /* KYExpressionToolbar.m */; };
+		D6EE8A4E1BE8951300855E29 /* KYExpressionViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A371BE8951300855E29 /* KYExpressionViewContainer.m */; };
+		D6EE8A4F1BE8951300855E29 /* NSData+KYImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A391BE8951300855E29 /* NSData+KYImageContentType.m */; };
+		D6EE8A501BE8951300855E29 /* UIImage+KYGif.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A3B1BE8951300855E29 /* UIImage+KYGif.m */; };
+		D6EE8A511BE8951300855E29 /* UIImage+KYMultiFormate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A3D1BE8951300855E29 /* UIImage+KYMultiFormate.m */; };
+		D6EE8A521BE8951300855E29 /* UIImage+Mask.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A3F1BE8951300855E29 /* UIImage+Mask.m */; };
+		D6EE8A531BE8951300855E29 /* UIView+FrameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A411BE8951300855E29 /* UIView+FrameAdjust.m */; };
+		D6EE8A541BE8951300855E29 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A431BE8951300855E29 /* UIView+Shadow.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D6EE8A061BE894F700855E29 /* KYExpressionInputViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYExpressionInputViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6EE8A0A1BE894F700855E29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D6EE8A0C1BE894F700855E29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D6EE8A0D1BE894F700855E29 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D6EE8A0F1BE894F700855E29 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D6EE8A101BE894F700855E29 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D6EE8A131BE894F700855E29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D6EE8A151BE894F700855E29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D6EE8A181BE894F700855E29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D6EE8A1A1BE894F700855E29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6EE8A231BE8951300855E29 /* KYExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpression.h; sourceTree = "<group>"; };
+		D6EE8A241BE8951300855E29 /* KYExpressionBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KYExpressionBundle.bundle; sourceTree = "<group>"; };
+		D6EE8A251BE8951300855E29 /* KYExpressionConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionConstant.h; sourceTree = "<group>"; };
+		D6EE8A261BE8951300855E29 /* KYExpressionContainerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionContainerLayout.h; sourceTree = "<group>"; };
+		D6EE8A271BE8951300855E29 /* KYExpressionContainerLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionContainerLayout.m; sourceTree = "<group>"; };
+		D6EE8A281BE8951300855E29 /* KYExpressionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionData.h; sourceTree = "<group>"; };
+		D6EE8A2B1BE8951300855E29 /* KYExpressionInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionInputView.h; sourceTree = "<group>"; };
+		D6EE8A2C1BE8951300855E29 /* KYExpressionInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionInputView.m; sourceTree = "<group>"; };
+		D6EE8A2D1BE8951300855E29 /* KYExpressionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionItem.h; sourceTree = "<group>"; };
+		D6EE8A2E1BE8951300855E29 /* KYExpressionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionItem.m; sourceTree = "<group>"; };
+		D6EE8A2F1BE8951300855E29 /* KYExpressionPackageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionPackageProtocol.h; sourceTree = "<group>"; };
+		D6EE8A301BE8951300855E29 /* KYExpressionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionStore.h; sourceTree = "<group>"; };
+		D6EE8A311BE8951300855E29 /* KYExpressionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionStore.m; sourceTree = "<group>"; };
+		D6EE8A321BE8951300855E29 /* KYExpressionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionToolbar.h; sourceTree = "<group>"; };
+		D6EE8A331BE8951300855E29 /* KYExpressionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionToolbar.m; sourceTree = "<group>"; };
+		D6EE8A361BE8951300855E29 /* KYExpressionViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionViewContainer.h; sourceTree = "<group>"; };
+		D6EE8A371BE8951300855E29 /* KYExpressionViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionViewContainer.m; sourceTree = "<group>"; };
+		D6EE8A381BE8951300855E29 /* NSData+KYImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+KYImageContentType.h"; sourceTree = "<group>"; };
+		D6EE8A391BE8951300855E29 /* NSData+KYImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+KYImageContentType.m"; sourceTree = "<group>"; };
+		D6EE8A3A1BE8951300855E29 /* UIImage+KYGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KYGif.h"; sourceTree = "<group>"; };
+		D6EE8A3B1BE8951300855E29 /* UIImage+KYGif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KYGif.m"; sourceTree = "<group>"; };
+		D6EE8A3C1BE8951300855E29 /* UIImage+KYMultiFormate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KYMultiFormate.h"; sourceTree = "<group>"; };
+		D6EE8A3D1BE8951300855E29 /* UIImage+KYMultiFormate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KYMultiFormate.m"; sourceTree = "<group>"; };
+		D6EE8A3E1BE8951300855E29 /* UIImage+Mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Mask.h"; sourceTree = "<group>"; };
+		D6EE8A3F1BE8951300855E29 /* UIImage+Mask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Mask.m"; sourceTree = "<group>"; };
+		D6EE8A401BE8951300855E29 /* UIView+FrameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameAdjust.h"; sourceTree = "<group>"; };
+		D6EE8A411BE8951300855E29 /* UIView+FrameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameAdjust.m"; sourceTree = "<group>"; };
+		D6EE8A421BE8951300855E29 /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
+		D6EE8A431BE8951300855E29 /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D6EE8A031BE894F700855E29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D6EE89FD1BE894F700855E29 = {
+			isa = PBXGroup;
+			children = (
+				D6EE8A081BE894F700855E29 /* KYExpressionInputViewDemo */,
+				D6EE8A071BE894F700855E29 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D6EE8A071BE894F700855E29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6EE8A061BE894F700855E29 /* KYExpressionInputViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D6EE8A081BE894F700855E29 /* KYExpressionInputViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D6EE8A201BE8951300855E29 /* KYExpressionInputView */,
+				D6EE8A0C1BE894F700855E29 /* AppDelegate.h */,
+				D6EE8A0D1BE894F700855E29 /* AppDelegate.m */,
+				D6EE8A0F1BE894F700855E29 /* ViewController.h */,
+				D6EE8A101BE894F700855E29 /* ViewController.m */,
+				D6EE8A121BE894F700855E29 /* Main.storyboard */,
+				D6EE8A151BE894F700855E29 /* Assets.xcassets */,
+				D6EE8A171BE894F700855E29 /* LaunchScreen.storyboard */,
+				D6EE8A1A1BE894F700855E29 /* Info.plist */,
+				D6EE8A091BE894F700855E29 /* Supporting Files */,
+			);
+			path = KYExpressionInputViewDemo;
+			sourceTree = "<group>";
+		};
+		D6EE8A091BE894F700855E29 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D6EE8A0A1BE894F700855E29 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D6EE8A201BE8951300855E29 /* KYExpressionInputView */ = {
+			isa = PBXGroup;
+			children = (
+				D6EE8A551BE8962200855E29 /* Catagory */,
+				D6EE8A231BE8951300855E29 /* KYExpression.h */,
+				D6EE8A281BE8951300855E29 /* KYExpressionData.h */,
+				D6EE8A251BE8951300855E29 /* KYExpressionConstant.h */,
+				D6EE8A2F1BE8951300855E29 /* KYExpressionPackageProtocol.h */,
+				D6EE8A2B1BE8951300855E29 /* KYExpressionInputView.h */,
+				D6EE8A2C1BE8951300855E29 /* KYExpressionInputView.m */,
+				D6EE8A2D1BE8951300855E29 /* KYExpressionItem.h */,
+				D6EE8A2E1BE8951300855E29 /* KYExpressionItem.m */,
+				D6EE8A301BE8951300855E29 /* KYExpressionStore.h */,
+				D6EE8A311BE8951300855E29 /* KYExpressionStore.m */,
+				D6EE8A321BE8951300855E29 /* KYExpressionToolbar.h */,
+				D6EE8A331BE8951300855E29 /* KYExpressionToolbar.m */,
+				D6EE8A361BE8951300855E29 /* KYExpressionViewContainer.h */,
+				D6EE8A371BE8951300855E29 /* KYExpressionViewContainer.m */,
+				D6EE8A261BE8951300855E29 /* KYExpressionContainerLayout.h */,
+				D6EE8A271BE8951300855E29 /* KYExpressionContainerLayout.m */,
+				D6EE8A241BE8951300855E29 /* KYExpressionBundle.bundle */,
+			);
+			path = KYExpressionInputView;
+			sourceTree = "<group>";
+		};
+		D6EE8A551BE8962200855E29 /* Catagory */ = {
+			isa = PBXGroup;
+			children = (
+				D6EE8A3A1BE8951300855E29 /* UIImage+KYGif.h */,
+				D6EE8A3B1BE8951300855E29 /* UIImage+KYGif.m */,
+				D6EE8A3C1BE8951300855E29 /* UIImage+KYMultiFormate.h */,
+				D6EE8A3D1BE8951300855E29 /* UIImage+KYMultiFormate.m */,
+				D6EE8A3E1BE8951300855E29 /* UIImage+Mask.h */,
+				D6EE8A3F1BE8951300855E29 /* UIImage+Mask.m */,
+				D6EE8A401BE8951300855E29 /* UIView+FrameAdjust.h */,
+				D6EE8A411BE8951300855E29 /* UIView+FrameAdjust.m */,
+				D6EE8A421BE8951300855E29 /* UIView+Shadow.h */,
+				D6EE8A431BE8951300855E29 /* UIView+Shadow.m */,
+				D6EE8A381BE8951300855E29 /* NSData+KYImageContentType.h */,
+				D6EE8A391BE8951300855E29 /* NSData+KYImageContentType.m */,
+			);
+			name = Catagory;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D6EE8A051BE894F700855E29 /* KYExpressionInputViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6EE8A1D1BE894F700855E29 /* Build configuration list for PBXNativeTarget "KYExpressionInputViewDemo" */;
+			buildPhases = (
+				D6EE8A021BE894F700855E29 /* Sources */,
+				D6EE8A031BE894F700855E29 /* Frameworks */,
+				D6EE8A041BE894F700855E29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KYExpressionInputViewDemo;
+			productName = KYExpressionInputViewDemo;
+			productReference = D6EE8A061BE894F700855E29 /* KYExpressionInputViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D6EE89FE1BE894F700855E29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = YamatoKira;
+				TargetAttributes = {
+					D6EE8A051BE894F700855E29 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = D6EE8A011BE894F700855E29 /* Build configuration list for PBXProject "KYExpressionInputViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D6EE89FD1BE894F700855E29;
+			productRefGroup = D6EE8A071BE894F700855E29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D6EE8A051BE894F700855E29 /* KYExpressionInputViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D6EE8A041BE894F700855E29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6EE8A191BE894F700855E29 /* LaunchScreen.storyboard in Resources */,
+				D6EE8A461BE8951300855E29 /* KYExpressionBundle.bundle in Resources */,
+				D6EE8A161BE894F700855E29 /* Assets.xcassets in Resources */,
+				D6EE8A141BE894F700855E29 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D6EE8A021BE894F700855E29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6EE8A4A1BE8951300855E29 /* KYExpressionItem.m in Sources */,
+				D6EE8A501BE8951300855E29 /* UIImage+KYGif.m in Sources */,
+				D6EE8A111BE894F700855E29 /* ViewController.m in Sources */,
+				D6EE8A471BE8951300855E29 /* KYExpressionContainerLayout.m in Sources */,
+				D6EE8A4F1BE8951300855E29 /* NSData+KYImageContentType.m in Sources */,
+				D6EE8A0E1BE894F700855E29 /* AppDelegate.m in Sources */,
+				D6EE8A4E1BE8951300855E29 /* KYExpressionViewContainer.m in Sources */,
+				D6EE8A531BE8951300855E29 /* UIView+FrameAdjust.m in Sources */,
+				D6EE8A541BE8951300855E29 /* UIView+Shadow.m in Sources */,
+				D6EE8A0B1BE894F700855E29 /* main.m in Sources */,
+				D6EE8A491BE8951300855E29 /* KYExpressionInputView.m in Sources */,
+				D6EE8A4C1BE8951300855E29 /* KYExpressionToolbar.m in Sources */,
+				D6EE8A521BE8951300855E29 /* UIImage+Mask.m in Sources */,
+				D6EE8A511BE8951300855E29 /* UIImage+KYMultiFormate.m in Sources */,
+				D6EE8A4B1BE8951300855E29 /* KYExpressionStore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D6EE8A121BE894F700855E29 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6EE8A131BE894F700855E29 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D6EE8A171BE894F700855E29 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6EE8A181BE894F700855E29 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D6EE8A1B1BE894F700855E29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D6EE8A1C1BE894F700855E29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D6EE8A1E1BE894F700855E29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KYExpressionInputViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kira.KYExpressionInputViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D6EE8A1F1BE894F700855E29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KYExpressionInputViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kira.KYExpressionInputViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D6EE8A011BE894F700855E29 /* Build configuration list for PBXProject "KYExpressionInputViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6EE8A1B1BE894F700855E29 /* Debug */,
+				D6EE8A1C1BE894F700855E29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6EE8A1D1BE894F700855E29 /* Build configuration list for PBXNativeTarget "KYExpressionInputViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6EE8A1E1BE894F700855E29 /* Debug */,
+				D6EE8A1F1BE894F700855E29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D6EE89FE1BE894F700855E29 /* Project object */;
+}
