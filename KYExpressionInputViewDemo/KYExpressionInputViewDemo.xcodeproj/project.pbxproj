@@ -13,19 +13,19 @@
 		D6EE8A141BE894F700855E29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6EE8A121BE894F700855E29 /* Main.storyboard */; };
 		D6EE8A161BE894F700855E29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6EE8A151BE894F700855E29 /* Assets.xcassets */; };
 		D6EE8A191BE894F700855E29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6EE8A171BE894F700855E29 /* LaunchScreen.storyboard */; };
-		D6EE8A461BE8951300855E29 /* KYExpressionBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D6EE8A241BE8951300855E29 /* KYExpressionBundle.bundle */; };
-		D6EE8A471BE8951300855E29 /* KYExpressionContainerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A271BE8951300855E29 /* KYExpressionContainerLayout.m */; };
-		D6EE8A491BE8951300855E29 /* KYExpressionInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A2C1BE8951300855E29 /* KYExpressionInputView.m */; };
-		D6EE8A4A1BE8951300855E29 /* KYExpressionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A2E1BE8951300855E29 /* KYExpressionItem.m */; };
-		D6EE8A4B1BE8951300855E29 /* KYExpressionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A311BE8951300855E29 /* KYExpressionStore.m */; };
-		D6EE8A4C1BE8951300855E29 /* KYExpressionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A331BE8951300855E29 /* KYExpressionToolbar.m */; };
-		D6EE8A4E1BE8951300855E29 /* KYExpressionViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A371BE8951300855E29 /* KYExpressionViewContainer.m */; };
-		D6EE8A4F1BE8951300855E29 /* NSData+KYImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A391BE8951300855E29 /* NSData+KYImageContentType.m */; };
-		D6EE8A501BE8951300855E29 /* UIImage+KYGif.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A3B1BE8951300855E29 /* UIImage+KYGif.m */; };
-		D6EE8A511BE8951300855E29 /* UIImage+KYMultiFormate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A3D1BE8951300855E29 /* UIImage+KYMultiFormate.m */; };
-		D6EE8A521BE8951300855E29 /* UIImage+Mask.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A3F1BE8951300855E29 /* UIImage+Mask.m */; };
-		D6EE8A531BE8951300855E29 /* UIView+FrameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A411BE8951300855E29 /* UIView+FrameAdjust.m */; };
-		D6EE8A541BE8951300855E29 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A431BE8951300855E29 /* UIView+Shadow.m */; };
+		D6EE8AF51BE8B8C500855E29 /* KYExpressionBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D6EE8AD91BE8B8C500855E29 /* KYExpressionBundle.bundle */; };
+		D6EE8AF61BE8B8C500855E29 /* KYExpressionContainerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8ADC1BE8B8C500855E29 /* KYExpressionContainerLayout.m */; };
+		D6EE8AF71BE8B8C500855E29 /* KYExpressionInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8ADF1BE8B8C500855E29 /* KYExpressionInputView.m */; };
+		D6EE8AF81BE8B8C500855E29 /* KYExpressionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AE11BE8B8C500855E29 /* KYExpressionItem.m */; };
+		D6EE8AF91BE8B8C500855E29 /* KYExpressionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AE41BE8B8C500855E29 /* KYExpressionStore.m */; };
+		D6EE8AFA1BE8B8C500855E29 /* KYExpressionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AE61BE8B8C500855E29 /* KYExpressionToolbar.m */; };
+		D6EE8AFB1BE8B8C500855E29 /* KYExpressionViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AE81BE8B8C500855E29 /* KYExpressionViewContainer.m */; };
+		D6EE8AFC1BE8B8C500855E29 /* NSData+KYImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AEA1BE8B8C500855E29 /* NSData+KYImageContentType.m */; };
+		D6EE8AFD1BE8B8C500855E29 /* UIImage+KYGif.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AEC1BE8B8C500855E29 /* UIImage+KYGif.m */; };
+		D6EE8AFE1BE8B8C500855E29 /* UIImage+KYMultiFormate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AEE1BE8B8C500855E29 /* UIImage+KYMultiFormate.m */; };
+		D6EE8AFF1BE8B8C500855E29 /* UIImage+Mask.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AF01BE8B8C500855E29 /* UIImage+Mask.m */; };
+		D6EE8B001BE8B8C500855E29 /* UIView+FrameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AF21BE8B8C500855E29 /* UIView+FrameAdjust.m */; };
+		D6EE8B011BE8B8C500855E29 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AF41BE8B8C500855E29 /* UIView+Shadow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,35 +39,35 @@
 		D6EE8A151BE894F700855E29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6EE8A181BE894F700855E29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6EE8A1A1BE894F700855E29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D6EE8A231BE8951300855E29 /* KYExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpression.h; sourceTree = "<group>"; };
-		D6EE8A241BE8951300855E29 /* KYExpressionBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KYExpressionBundle.bundle; sourceTree = "<group>"; };
-		D6EE8A251BE8951300855E29 /* KYExpressionConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionConstant.h; sourceTree = "<group>"; };
-		D6EE8A261BE8951300855E29 /* KYExpressionContainerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionContainerLayout.h; sourceTree = "<group>"; };
-		D6EE8A271BE8951300855E29 /* KYExpressionContainerLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionContainerLayout.m; sourceTree = "<group>"; };
-		D6EE8A281BE8951300855E29 /* KYExpressionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionData.h; sourceTree = "<group>"; };
-		D6EE8A2B1BE8951300855E29 /* KYExpressionInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionInputView.h; sourceTree = "<group>"; };
-		D6EE8A2C1BE8951300855E29 /* KYExpressionInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionInputView.m; sourceTree = "<group>"; };
-		D6EE8A2D1BE8951300855E29 /* KYExpressionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionItem.h; sourceTree = "<group>"; };
-		D6EE8A2E1BE8951300855E29 /* KYExpressionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionItem.m; sourceTree = "<group>"; };
-		D6EE8A2F1BE8951300855E29 /* KYExpressionPackageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionPackageProtocol.h; sourceTree = "<group>"; };
-		D6EE8A301BE8951300855E29 /* KYExpressionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionStore.h; sourceTree = "<group>"; };
-		D6EE8A311BE8951300855E29 /* KYExpressionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionStore.m; sourceTree = "<group>"; };
-		D6EE8A321BE8951300855E29 /* KYExpressionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionToolbar.h; sourceTree = "<group>"; };
-		D6EE8A331BE8951300855E29 /* KYExpressionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionToolbar.m; sourceTree = "<group>"; };
-		D6EE8A361BE8951300855E29 /* KYExpressionViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionViewContainer.h; sourceTree = "<group>"; };
-		D6EE8A371BE8951300855E29 /* KYExpressionViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionViewContainer.m; sourceTree = "<group>"; };
-		D6EE8A381BE8951300855E29 /* NSData+KYImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+KYImageContentType.h"; sourceTree = "<group>"; };
-		D6EE8A391BE8951300855E29 /* NSData+KYImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+KYImageContentType.m"; sourceTree = "<group>"; };
-		D6EE8A3A1BE8951300855E29 /* UIImage+KYGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KYGif.h"; sourceTree = "<group>"; };
-		D6EE8A3B1BE8951300855E29 /* UIImage+KYGif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KYGif.m"; sourceTree = "<group>"; };
-		D6EE8A3C1BE8951300855E29 /* UIImage+KYMultiFormate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KYMultiFormate.h"; sourceTree = "<group>"; };
-		D6EE8A3D1BE8951300855E29 /* UIImage+KYMultiFormate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KYMultiFormate.m"; sourceTree = "<group>"; };
-		D6EE8A3E1BE8951300855E29 /* UIImage+Mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Mask.h"; sourceTree = "<group>"; };
-		D6EE8A3F1BE8951300855E29 /* UIImage+Mask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Mask.m"; sourceTree = "<group>"; };
-		D6EE8A401BE8951300855E29 /* UIView+FrameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameAdjust.h"; sourceTree = "<group>"; };
-		D6EE8A411BE8951300855E29 /* UIView+FrameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameAdjust.m"; sourceTree = "<group>"; };
-		D6EE8A421BE8951300855E29 /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
-		D6EE8A431BE8951300855E29 /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
+		D6EE8AD81BE8B8C500855E29 /* KYExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpression.h; sourceTree = "<group>"; };
+		D6EE8AD91BE8B8C500855E29 /* KYExpressionBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KYExpressionBundle.bundle; sourceTree = "<group>"; };
+		D6EE8ADA1BE8B8C500855E29 /* KYExpressionConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionConstant.h; sourceTree = "<group>"; };
+		D6EE8ADB1BE8B8C500855E29 /* KYExpressionContainerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionContainerLayout.h; sourceTree = "<group>"; };
+		D6EE8ADC1BE8B8C500855E29 /* KYExpressionContainerLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionContainerLayout.m; sourceTree = "<group>"; };
+		D6EE8ADD1BE8B8C500855E29 /* KYExpressionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionData.h; sourceTree = "<group>"; };
+		D6EE8ADE1BE8B8C500855E29 /* KYExpressionInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionInputView.h; sourceTree = "<group>"; };
+		D6EE8ADF1BE8B8C500855E29 /* KYExpressionInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionInputView.m; sourceTree = "<group>"; };
+		D6EE8AE01BE8B8C500855E29 /* KYExpressionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionItem.h; sourceTree = "<group>"; };
+		D6EE8AE11BE8B8C500855E29 /* KYExpressionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionItem.m; sourceTree = "<group>"; };
+		D6EE8AE21BE8B8C500855E29 /* KYExpressionPackageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionPackageProtocol.h; sourceTree = "<group>"; };
+		D6EE8AE31BE8B8C500855E29 /* KYExpressionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionStore.h; sourceTree = "<group>"; };
+		D6EE8AE41BE8B8C500855E29 /* KYExpressionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionStore.m; sourceTree = "<group>"; };
+		D6EE8AE51BE8B8C500855E29 /* KYExpressionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionToolbar.h; sourceTree = "<group>"; };
+		D6EE8AE61BE8B8C500855E29 /* KYExpressionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionToolbar.m; sourceTree = "<group>"; };
+		D6EE8AE71BE8B8C500855E29 /* KYExpressionViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionViewContainer.h; sourceTree = "<group>"; };
+		D6EE8AE81BE8B8C500855E29 /* KYExpressionViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionViewContainer.m; sourceTree = "<group>"; };
+		D6EE8AE91BE8B8C500855E29 /* NSData+KYImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+KYImageContentType.h"; sourceTree = "<group>"; };
+		D6EE8AEA1BE8B8C500855E29 /* NSData+KYImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+KYImageContentType.m"; sourceTree = "<group>"; };
+		D6EE8AEB1BE8B8C500855E29 /* UIImage+KYGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KYGif.h"; sourceTree = "<group>"; };
+		D6EE8AEC1BE8B8C500855E29 /* UIImage+KYGif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KYGif.m"; sourceTree = "<group>"; };
+		D6EE8AED1BE8B8C500855E29 /* UIImage+KYMultiFormate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KYMultiFormate.h"; sourceTree = "<group>"; };
+		D6EE8AEE1BE8B8C500855E29 /* UIImage+KYMultiFormate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KYMultiFormate.m"; sourceTree = "<group>"; };
+		D6EE8AEF1BE8B8C500855E29 /* UIImage+Mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Mask.h"; sourceTree = "<group>"; };
+		D6EE8AF01BE8B8C500855E29 /* UIImage+Mask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Mask.m"; sourceTree = "<group>"; };
+		D6EE8AF11BE8B8C500855E29 /* UIView+FrameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameAdjust.h"; sourceTree = "<group>"; };
+		D6EE8AF21BE8B8C500855E29 /* UIView+FrameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameAdjust.m"; sourceTree = "<group>"; };
+		D6EE8AF31BE8B8C500855E29 /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
+		D6EE8AF41BE8B8C500855E29 /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 		D6EE8A081BE894F700855E29 /* KYExpressionInputViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D6EE8A201BE8951300855E29 /* KYExpressionInputView */,
+				D6EE8AD71BE8B8C500855E29 /* KYExpressionInputView */,
 				D6EE8A0C1BE894F700855E29 /* AppDelegate.h */,
 				D6EE8A0D1BE894F700855E29 /* AppDelegate.m */,
 				D6EE8A0F1BE894F700855E29 /* ViewController.h */,
@@ -122,48 +122,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D6EE8A201BE8951300855E29 /* KYExpressionInputView */ = {
+		D6EE8AD71BE8B8C500855E29 /* KYExpressionInputView */ = {
 			isa = PBXGroup;
 			children = (
-				D6EE8A551BE8962200855E29 /* Catagory */,
-				D6EE8A231BE8951300855E29 /* KYExpression.h */,
-				D6EE8A281BE8951300855E29 /* KYExpressionData.h */,
-				D6EE8A251BE8951300855E29 /* KYExpressionConstant.h */,
-				D6EE8A2F1BE8951300855E29 /* KYExpressionPackageProtocol.h */,
-				D6EE8A2B1BE8951300855E29 /* KYExpressionInputView.h */,
-				D6EE8A2C1BE8951300855E29 /* KYExpressionInputView.m */,
-				D6EE8A2D1BE8951300855E29 /* KYExpressionItem.h */,
-				D6EE8A2E1BE8951300855E29 /* KYExpressionItem.m */,
-				D6EE8A301BE8951300855E29 /* KYExpressionStore.h */,
-				D6EE8A311BE8951300855E29 /* KYExpressionStore.m */,
-				D6EE8A321BE8951300855E29 /* KYExpressionToolbar.h */,
-				D6EE8A331BE8951300855E29 /* KYExpressionToolbar.m */,
-				D6EE8A361BE8951300855E29 /* KYExpressionViewContainer.h */,
-				D6EE8A371BE8951300855E29 /* KYExpressionViewContainer.m */,
-				D6EE8A261BE8951300855E29 /* KYExpressionContainerLayout.h */,
-				D6EE8A271BE8951300855E29 /* KYExpressionContainerLayout.m */,
-				D6EE8A241BE8951300855E29 /* KYExpressionBundle.bundle */,
+				D6EE8AD81BE8B8C500855E29 /* KYExpression.h */,
+				D6EE8ADA1BE8B8C500855E29 /* KYExpressionConstant.h */,
+				D6EE8ADB1BE8B8C500855E29 /* KYExpressionContainerLayout.h */,
+				D6EE8ADC1BE8B8C500855E29 /* KYExpressionContainerLayout.m */,
+				D6EE8ADD1BE8B8C500855E29 /* KYExpressionData.h */,
+				D6EE8ADE1BE8B8C500855E29 /* KYExpressionInputView.h */,
+				D6EE8ADF1BE8B8C500855E29 /* KYExpressionInputView.m */,
+				D6EE8AE01BE8B8C500855E29 /* KYExpressionItem.h */,
+				D6EE8AE11BE8B8C500855E29 /* KYExpressionItem.m */,
+				D6EE8AE21BE8B8C500855E29 /* KYExpressionPackageProtocol.h */,
+				D6EE8AE31BE8B8C500855E29 /* KYExpressionStore.h */,
+				D6EE8AE41BE8B8C500855E29 /* KYExpressionStore.m */,
+				D6EE8AE51BE8B8C500855E29 /* KYExpressionToolbar.h */,
+				D6EE8AE61BE8B8C500855E29 /* KYExpressionToolbar.m */,
+				D6EE8AE71BE8B8C500855E29 /* KYExpressionViewContainer.h */,
+				D6EE8AE81BE8B8C500855E29 /* KYExpressionViewContainer.m */,
+				D6EE8AE91BE8B8C500855E29 /* NSData+KYImageContentType.h */,
+				D6EE8AEA1BE8B8C500855E29 /* NSData+KYImageContentType.m */,
+				D6EE8AEB1BE8B8C500855E29 /* UIImage+KYGif.h */,
+				D6EE8AEC1BE8B8C500855E29 /* UIImage+KYGif.m */,
+				D6EE8AED1BE8B8C500855E29 /* UIImage+KYMultiFormate.h */,
+				D6EE8AEE1BE8B8C500855E29 /* UIImage+KYMultiFormate.m */,
+				D6EE8AEF1BE8B8C500855E29 /* UIImage+Mask.h */,
+				D6EE8AF01BE8B8C500855E29 /* UIImage+Mask.m */,
+				D6EE8AF11BE8B8C500855E29 /* UIView+FrameAdjust.h */,
+				D6EE8AF21BE8B8C500855E29 /* UIView+FrameAdjust.m */,
+				D6EE8AF31BE8B8C500855E29 /* UIView+Shadow.h */,
+				D6EE8AF41BE8B8C500855E29 /* UIView+Shadow.m */,
+				D6EE8AD91BE8B8C500855E29 /* KYExpressionBundle.bundle */,
 			);
-			path = KYExpressionInputView;
-			sourceTree = "<group>";
-		};
-		D6EE8A551BE8962200855E29 /* Catagory */ = {
-			isa = PBXGroup;
-			children = (
-				D6EE8A3A1BE8951300855E29 /* UIImage+KYGif.h */,
-				D6EE8A3B1BE8951300855E29 /* UIImage+KYGif.m */,
-				D6EE8A3C1BE8951300855E29 /* UIImage+KYMultiFormate.h */,
-				D6EE8A3D1BE8951300855E29 /* UIImage+KYMultiFormate.m */,
-				D6EE8A3E1BE8951300855E29 /* UIImage+Mask.h */,
-				D6EE8A3F1BE8951300855E29 /* UIImage+Mask.m */,
-				D6EE8A401BE8951300855E29 /* UIView+FrameAdjust.h */,
-				D6EE8A411BE8951300855E29 /* UIView+FrameAdjust.m */,
-				D6EE8A421BE8951300855E29 /* UIView+Shadow.h */,
-				D6EE8A431BE8951300855E29 /* UIView+Shadow.m */,
-				D6EE8A381BE8951300855E29 /* NSData+KYImageContentType.h */,
-				D6EE8A391BE8951300855E29 /* NSData+KYImageContentType.m */,
-			);
-			name = Catagory;
+			name = KYExpressionInputView;
+			path = ../../KYExpressionInputView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6EE8A191BE894F700855E29 /* LaunchScreen.storyboard in Resources */,
-				D6EE8A461BE8951300855E29 /* KYExpressionBundle.bundle in Resources */,
 				D6EE8A161BE894F700855E29 /* Assets.xcassets in Resources */,
 				D6EE8A141BE894F700855E29 /* Main.storyboard in Resources */,
+				D6EE8AF51BE8B8C500855E29 /* KYExpressionBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,21 +230,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6EE8A4A1BE8951300855E29 /* KYExpressionItem.m in Sources */,
-				D6EE8A501BE8951300855E29 /* UIImage+KYGif.m in Sources */,
+				D6EE8AFF1BE8B8C500855E29 /* UIImage+Mask.m in Sources */,
+				D6EE8AFC1BE8B8C500855E29 /* NSData+KYImageContentType.m in Sources */,
+				D6EE8B011BE8B8C500855E29 /* UIView+Shadow.m in Sources */,
+				D6EE8AF81BE8B8C500855E29 /* KYExpressionItem.m in Sources */,
+				D6EE8AF91BE8B8C500855E29 /* KYExpressionStore.m in Sources */,
 				D6EE8A111BE894F700855E29 /* ViewController.m in Sources */,
-				D6EE8A471BE8951300855E29 /* KYExpressionContainerLayout.m in Sources */,
-				D6EE8A4F1BE8951300855E29 /* NSData+KYImageContentType.m in Sources */,
+				D6EE8AF61BE8B8C500855E29 /* KYExpressionContainerLayout.m in Sources */,
+				D6EE8AFB1BE8B8C500855E29 /* KYExpressionViewContainer.m in Sources */,
+				D6EE8B001BE8B8C500855E29 /* UIView+FrameAdjust.m in Sources */,
 				D6EE8A0E1BE894F700855E29 /* AppDelegate.m in Sources */,
-				D6EE8A4E1BE8951300855E29 /* KYExpressionViewContainer.m in Sources */,
-				D6EE8A531BE8951300855E29 /* UIView+FrameAdjust.m in Sources */,
-				D6EE8A541BE8951300855E29 /* UIView+Shadow.m in Sources */,
 				D6EE8A0B1BE894F700855E29 /* main.m in Sources */,
-				D6EE8A491BE8951300855E29 /* KYExpressionInputView.m in Sources */,
-				D6EE8A4C1BE8951300855E29 /* KYExpressionToolbar.m in Sources */,
-				D6EE8A521BE8951300855E29 /* UIImage+Mask.m in Sources */,
-				D6EE8A511BE8951300855E29 /* UIImage+KYMultiFormate.m in Sources */,
-				D6EE8A4B1BE8951300855E29 /* KYExpressionStore.m in Sources */,
+				D6EE8AFE1BE8B8C500855E29 /* UIImage+KYMultiFormate.m in Sources */,
+				D6EE8AF71BE8B8C500855E29 /* KYExpressionInputView.m in Sources */,
+				D6EE8AFA1BE8B8C500855E29 /* KYExpressionToolbar.m in Sources */,
+				D6EE8AFD1BE8B8C500855E29 /* UIImage+KYGif.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +391,7 @@
 				D6EE8A1F1BE894F700855E29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

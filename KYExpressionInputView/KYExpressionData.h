@@ -11,9 +11,9 @@
 typedef NS_ENUM(NSUInteger, KYExpressionDataType) {
     kExpressionDataTypeNone,
     kExpressionDataTypeEmoji,  //emoji表情
+    kExpressionDataTypeDelete,  //默认的删除按钮
     kExpressionDataTypeImage,  //静态图片
     kExpressionDataTypeGif,    //gif动图
-    kExpressionDataTypeDelete,  //默认的删除按钮
 };
 
 @protocol KYExpressionData <NSObject>
