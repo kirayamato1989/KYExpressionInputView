@@ -1,16 +1,17 @@
 # KYExpressionInputView
 
-1.初始化
- KYExpressionInputView *inputView = [[KYExpressionInputView alloc] init];
+初始化
+
+KYExpressionInputView *inputView = [[KYExpressionInputView alloc] init];\n
 
 2.添加emoji
-//替换自己的plist文件
-NSString *emojiPath = [kExpressionBundle pathForResource:@"ISEmojiList" ofType:@"plist"];
-NSArray *array = [NSArray arrayWithContentsOfFile:emojiPath];
-NSMutableArray *emojiItems = [NSMutableArray array];
-for (NSString *text in array) {
-    KYExpressionItem *item = [KYExpressionItem itemWithEmoji:text];
-    [emojiItems addObject:item];
+
+NSString *emojiPath = [kExpressionBundle pathForResource:@"ISEmojiList" ofType:@"plist"];\n
+NSArray *array = [NSArray arrayWithContentsOfFile:emojiPath];\n
+NSMutableArray *emojiItems = [NSMutableArray array];\n
+for (NSString *text in array) {\n
+    KYExpressionItem *item = [KYExpressionItem itemWithEmoji:text];\n
+    [emojiItems addObject:item];\n
 }
 
 指定行数列数大小还有间距
