@@ -1,6 +1,6 @@
 # KYExpressionInputView
 
-初始化
+1.初始化
 
 KYExpressionInputView *inputView = [[KYExpressionInputView alloc] init];
 
