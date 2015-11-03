@@ -48,5 +48,5 @@ NSString *iconPath = [kExpressionBundle pathForResource:@"icon" ofType:@"jpg"];
 
 ![image](https://github.com/kirayamato1989/KYExpressionInputView/blob/master/KYExpressionInputViewDemo/KYExpressionInputViewDemo/QQ20151104-1@2x.png?raw=true)
 
-![image]()
+![image](https://github.com/kirayamato1989/KYExpressionInputView/blob/master/KYExpressionInputViewDemo/KYExpressionInputViewDemo/QQ20151104-2@2x.png?raw=true)
 
