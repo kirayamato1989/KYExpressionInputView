@@ -46,6 +46,6 @@ NSString *iconPath = [kExpressionBundle pathForResource:@"icon" ofType:@"jpg"];
 
 [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
 
-![image](https://github.com/kirayamato1989/KYExpressionInputView/blob/master/KYExpressionInputViewDemo/KYExpressionInputViewDemo/QQ20151104-1@2x.png?raw=true)![image](https://github.com/kirayamato1989/KYExpressionInputView/blob/master/KYExpressionInputViewDemo/KYExpressionInputViewDemo/QQ20151104-2@2x.png?raw=true)
+![image](https://github.com/kirayamato1989/KYExpressionInputView/blob/master/KYExpressionInputViewDemo/KYExpressionInputViewDemo/QQ20151104-1@2x.png?raw=true)
 
 
