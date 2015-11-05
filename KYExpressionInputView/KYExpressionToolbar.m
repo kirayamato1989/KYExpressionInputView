@@ -40,7 +40,7 @@
         [self setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
         if (image) {
             [self setImage:image forState:UIControlStateNormal];
-            UIImage *seletedImage = [UIImage maskImage:image color:UIColorFromRGBA(0x999999, 0.6)];
+            UIImage *seletedImage = [UIImage ky_maskImage:image color:UIColorFromRGBA(0x999999, 0.6)];
             [self setImage:seletedImage forState:UIControlStateSelected
              ];
         }

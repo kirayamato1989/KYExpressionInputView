@@ -12,13 +12,13 @@
 
 @implementation UIImage (KYMultiFormate)
 
-+ (instancetype)multiImageWithData:(NSData *)data {
++ (instancetype)ky_multiImageWithData:(NSData *)data {
     NSString *contentType = [NSData contentTypeForImageData:data];
     
     UIImage *image = nil;
     
     if ([contentType isEqualToString:@"image/gif"]) {
-        image = [UIImage animatedGIFWithData:data];
+        image = [UIImage ky_animatedGIFWithData:data];
     }
     else {
         image = [UIImage imageWithData:data];

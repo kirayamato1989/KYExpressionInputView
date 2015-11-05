@@ -72,7 +72,7 @@
 
 - (instancetype)initWithData:(NSData *)data url:(NSString *)url {
     if (self = [super init]) {
-        _image = [UIImage multiImageWithData:data];
+        _image = [UIImage ky_multiImageWithData:data];
         _imageUrl = url.copy;
         _imageData = data;
         

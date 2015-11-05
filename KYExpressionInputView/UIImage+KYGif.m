@@ -11,7 +11,7 @@
 
 @implementation UIImage (KYGif)
 
-+ (UIImage *)animatedGIFWithData:(NSData *)data {
++ (UIImage *)ky_animatedGIFWithData:(NSData *)data {
     if (!data) {
         return nil;
     }

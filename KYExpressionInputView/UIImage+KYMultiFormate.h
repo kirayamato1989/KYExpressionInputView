@@ -12,6 +12,6 @@
 
 @interface UIImage (KYMultiFormate)
 
-+ (instancetype)multiImageWithData:(NSData *)data;
++ (instancetype)ky_multiImageWithData:(NSData *)data;
 
 @end

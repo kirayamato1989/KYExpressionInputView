@@ -11,7 +11,7 @@
 
 @implementation UIImage (Mask)
 
-+ (UIImage *)maskImage:(UIImage *)image color:(UIColor *)color {
++ (UIImage *)ky_maskImage:(UIImage *)image color:(UIColor *)color {
     UIGraphicsBeginImageContextWithOptions(image.size, 1, image.scale);
     
     [image drawAtPoint:CGPointZero];

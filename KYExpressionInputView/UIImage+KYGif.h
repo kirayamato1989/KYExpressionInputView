@@ -12,6 +12,6 @@
 
 @interface UIImage (KYGif)
 
-+ (UIImage *)animatedGIFWithData:(NSData *)data;
++ (UIImage *)ky_animatedGIFWithData:(NSData *)data;
 
 @end

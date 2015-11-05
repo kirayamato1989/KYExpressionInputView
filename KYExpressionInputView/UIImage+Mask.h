@@ -10,6 +10,6 @@
 
 @interface UIImage (Mask)
 
-+ (UIImage *)maskImage:(UIImage *)image color:(UIColor *)color;
++ (UIImage *)ky_maskImage:(UIImage *)image color:(UIColor *)color;
 
 @end
