@@ -9,6 +9,7 @@
 #import "KYExpressionInputView.h"
 #import "KYExpressionViewContainer.h"
 #import "KYExpressionItem.h"
+#import "UIView+FrameAdjust.h"
 
 @interface KYExpressionInputView ()
 
@@ -289,6 +290,24 @@
             if ([[items firstObject] dataType] == kExpressionDataTypeEmoji) {
                [self removeContainerAtIndex:0];
             }
+        }
+    }
+}
+
+- (void)setHiddenToolBar:(BOOL)hiddenToolBar {
+    if (_hiddenToolBar != hiddenToolBar) {
+        _hiddenToolBar = hiddenToolBar;
+        if (hiddenToolBar) {
+            [UIView animateWithDuration:0.4 delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                self.toolbar.y += self.toolbar.height;
+                self.containerView.height += self.toolbar.height;
+            } completion:nil];
+        }
+        else {
+            [UIView animateWithDuration:0.4 delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                self.toolbar.y -= self.toolbar.height;
+                self.containerView.height -= self.toolbar.height;
+            } completion:nil];
         }
     }
 }

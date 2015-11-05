@@ -38,6 +38,7 @@
 
 @property (nonatomic, weak) UITextView *textView;
 
+
 // Boolens
 
 // default NO, when YES the emoji will hide
@@ -45,9 +46,6 @@
 
 // default NO, when YES the toolBar will hide
 @property (nonatomic, assign) BOOL hiddenToolBar;
-
-// default NO, when YES the default custom expression container will hiden
-@property (nonatomic, assign) BOOL hiddenCustomExpression;
 
 
 /**
