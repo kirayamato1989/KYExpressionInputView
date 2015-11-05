@@ -301,9 +301,12 @@
             [UIView animateWithDuration:0.4 delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.toolbar.y += self.toolbar.height;
                 self.containerView.height += self.toolbar.height;
-            } completion:nil];
+            } completion:^(BOOL finished) {
+                self.toolbar.hidden = YES;
+            }];
         }
         else {
+            self.toolbar.hidden = NO;
             [UIView animateWithDuration:0.4 delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.toolbar.y -= self.toolbar.height;
                 self.containerView.height -= self.toolbar.height;
