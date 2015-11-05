@@ -218,8 +218,11 @@
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     self.pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     self.pageControl.currentPage = 0;
-//    self.pageControl.backgroundColor = [UIColor redColor];
     [self addSubview:self.pageControl];
+}
+
+- (NSArray<id<KYExpressionData>> *)items {
+    return [NSArray arrayWithArray:self.dataArray];
 }
 
 - (void)setItems:(NSArray *)items {

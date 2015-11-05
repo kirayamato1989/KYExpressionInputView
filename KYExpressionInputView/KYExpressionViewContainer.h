@@ -34,6 +34,8 @@ typedef NS_ENUM(NSUInteger, KYExpressionViewContainerType) {
 @property (nonatomic, assign) KYExpressionViewContainerType containerType;
 
 
+- (NSArray <id<KYExpressionData>>*)items;
+
 
 - (void)setItems:(NSArray *)items;
 
