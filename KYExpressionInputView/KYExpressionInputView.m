@@ -7,7 +7,6 @@
 //
 
 #import "KYExpressionInputView.h"
-#import "KYExpressionViewContainer.h"
 #import "KYExpressionItem.h"
 #import "UIView+FrameAdjust.h"
 
@@ -26,6 +25,8 @@
 @end
 
 @implementation KYExpressionInputView
+
+#pragma mark inilizations
 
 - (instancetype)initWithFrame:(CGRect)frame {
     frame.size.height = 260.f;
@@ -67,10 +68,14 @@
     return self;
 }
 
+#pragma mark lifeCycle
 
 - (void)dealloc {
     NSLog(@"KYExpressionInputView--dealloc");
 }
+
+
+#pragma mark public method
 
 - (void)toggleSendButtonEnable:(BOOL)enable {
     [self.toolbar toggleSendButtonEnable:enable];
@@ -144,9 +149,20 @@
     
 }
 
+- (void)addCustomExpressionImage:(UIImage *)image {
+    
+    
+}
+
+- (KYExpressionViewContainer *)containerViewAtIndex:(NSUInteger)index {
+    return self.itemsConfigArray[index][@"container"];
+}
+
+#pragma mark private method
+
 - (void)removeContainerAtIndex:(NSUInteger)index {
     NSDictionary *config = self.itemsConfigArray[index];
-    UIView *view = config[@"container"];
+    KYExpressionViewContainer *view = config[@"container"];
     
     [view removeFromSuperview];
     [self.itemsConfigArray removeObjectAtIndex:index];
@@ -155,35 +171,7 @@
     
 }
 
-- (void)setItemSpacing:(CGFloat)itemSpacing {
-    if (_itemSpacing != itemSpacing) {
-        _itemSpacing = itemSpacing;
-        
-        for (NSMutableDictionary *config in self.itemsConfigArray) {
-            config[@"itemSpacing"] = @(itemSpacing);
-            if ([self.currentDisplayExpressionViewContainer isKindOfClass:[KYExpressionViewContainer class]]) {
-                KYExpressionContainerLayout *layout = [(KYExpressionViewContainer *)self.currentDisplayExpressionViewContainer layout];
-                layout.itemSpacing = itemSpacing;
-            }
-        }
-    }
-}
-
-- (void)setItemSize:(CGSize)itemSize {
-    if (!CGSizeEqualToSize(_itemSize, itemSize)) {
-        _itemSize = itemSize;
-        
-        for (NSMutableDictionary *config in self.itemsConfigArray) {
-            config[@"itemSize"] = [NSValue valueWithCGSize:itemSize];
-            if ([self.currentDisplayExpressionViewContainer isKindOfClass:[KYExpressionViewContainer class]]) {
-                KYExpressionContainerLayout *layout = [(KYExpressionViewContainer *)self.currentDisplayExpressionViewContainer layout];
-                layout.itemSize = itemSize;
-            }
-        }
-    }
-}
-
-- (void)configExpressionContainerViewForIndex:(NSUInteger)index {
+- (void)configExpressionContainerViewForIndex:(NSUInteger)index{
     if (index >= self.itemsConfigArray.count) return;
     
     NSMutableDictionary *config = self.itemsConfigArray[index];
@@ -228,6 +216,7 @@
                 [weakSelf.delegate inputView:weakSelf didSelectExpression:item];
             }
         };
+        
         view = container;
         
         config[@"container"] = container;
@@ -274,9 +263,35 @@
     return items;
 }
 
-- (void)addCustomExpressionImage:(UIImage *)image {
-    
-    
+
+#pragma mark setter&&getter
+
+- (void)setItemSpacing:(CGFloat)itemSpacing {
+    if (_itemSpacing != itemSpacing) {
+        _itemSpacing = itemSpacing;
+        
+        for (NSMutableDictionary *config in self.itemsConfigArray) {
+            config[@"itemSpacing"] = @(itemSpacing);
+            if ([self.currentDisplayExpressionViewContainer isKindOfClass:[KYExpressionViewContainer class]]) {
+                KYExpressionContainerLayout *layout = [(KYExpressionViewContainer *)self.currentDisplayExpressionViewContainer layout];
+                layout.itemSpacing = itemSpacing;
+            }
+        }
+    }
+}
+
+- (void)setItemSize:(CGSize)itemSize {
+    if (!CGSizeEqualToSize(_itemSize, itemSize)) {
+        _itemSize = itemSize;
+        
+        for (NSMutableDictionary *config in self.itemsConfigArray) {
+            config[@"itemSize"] = [NSValue valueWithCGSize:itemSize];
+            if ([self.currentDisplayExpressionViewContainer isKindOfClass:[KYExpressionViewContainer class]]) {
+                KYExpressionContainerLayout *layout = [(KYExpressionViewContainer *)self.currentDisplayExpressionViewContainer layout];
+                layout.itemSize = itemSize;
+            }
+        }
+    }
 }
 
 

@@ -10,6 +10,8 @@
 #import "KYExpressionToolbar.h"
 #import "KYExpressionData.h"
 #import "KYExpressionPackageProtocol.h"
+#import "KYExpressionViewContainer.h"
+
 
 @class KYExpressionInputView;
 
@@ -46,6 +48,16 @@
 
 // default NO, when YES the toolBar will hide
 @property (nonatomic, assign) BOOL hiddenToolBar;
+
+
+/**
+ *  获取expressionViewContainer
+ *
+ *  @param index 
+ *
+ *  @return
+ */
+- (KYExpressionViewContainer *)containerViewAtIndex:(NSUInteger)index;
 
 
 /**
