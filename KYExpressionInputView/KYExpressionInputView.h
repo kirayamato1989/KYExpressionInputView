@@ -94,11 +94,12 @@
 - (void)toggleSendButtonEnable:(BOOL)enable;
 
 /**
- *  添加自定义表情
+ *  给某个container添加表情
  *
- *  @param image
+ *  @param expression 
+ *  @param index
  */
-- (void)addCustomExpressionImage:(UIImage *)image;
+- (void)addCustomExpression:(id<KYExpressionData>)expression indexOfConatiner:(NSUInteger)index;
 
 
 

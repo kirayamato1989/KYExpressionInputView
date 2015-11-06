@@ -194,8 +194,13 @@
     }
 }
 
-- (void)addCustomExpressionImage:(UIImage *)image {
+- (void)addCustomExpression:(id<KYExpressionData>)expression indexOfConatiner:(NSUInteger)index {
+    KYExpressionViewContainerModel *model = self.modelArray[index];
+    NSMutableArray *array = model.expressionItems.mutableCopy;
+    [array addObject:expression];
+    model.expressionItems = [NSArray arrayWithArray:array];
     
+    [model.container addExpressionItem:expression];
 }
 
 - (KYExpressionViewContainer *)containerViewAtIndex:(NSUInteger)index {
