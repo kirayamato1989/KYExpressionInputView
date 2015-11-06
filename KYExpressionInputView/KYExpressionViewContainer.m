@@ -128,6 +128,13 @@
 
 @implementation KYExpressionViewContainer
 
++ (instancetype)containerWithLayout:(KYExpressionContainerLayout *)layout items:(NSArray<id<KYExpressionData>> *)items {
+    KYExpressionViewContainer *container = [[KYExpressionViewContainer alloc] initWithFrame:CGRectMake(0, 0, 320, 219)];
+    [container setLayout:layout];
+    [container setItems:items];
+    return container;
+}
+
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -226,6 +233,16 @@
     self.pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     self.pageControl.currentPage = 0;
     [self addSubview:self.pageControl];
+}
+
+- (void)setLayout:(KYExpressionContainerLayout *)layout {
+    if (_layout != layout) {
+        _layout.itemSize = layout.itemSize;
+        _layout.itemSpacing = layout.itemSpacing;
+        _layout.numberOfColumn = layout.numberOfColumn;
+        _layout.numberOfRow = layout.numberOfRow;
+        _layout.numberOfPage = layout.numberOfPage;
+    }
 }
 
 - (NSArray<id<KYExpressionData>> *)items {

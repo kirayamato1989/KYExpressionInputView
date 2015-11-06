@@ -47,9 +47,20 @@
     [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:KYUIntegerOrientationMake(4, 5) column:KYUIntegerOrientationMake(8, 14) itemSize:KYSizeOrientationMake(CGSizeMake(36, 36), CGSizeMake(36, 36)) itemSpacing:KYFloatOrientationMake(6, 8)];
     
     
+    
     NSString *iconPath = [kExpressionBundle pathForResource:@"icon" ofType:@"jpg"];
     
     [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:KYUIntegerOrientationMake(2, 3) column:KYUIntegerOrientationMake(6, 10) itemSize:KYSizeOrientationMake(CGSizeMake(50, 50), CGSizeMake(44, 44)) itemSpacing:KYFloatOrientationMake(15, 15)];
+    
+    // add by a KYExpressionViewContainer
+    KYExpressionContainerLayout *layout = [[KYExpressionContainerLayout alloc] init];
+    layout.itemSize = KYSizeOrientationMake(CGSizeMake(50, 50), CGSizeMake(40, 40));
+    layout.itemSpacing = KYFloatOrientationMake(20, 10);
+    layout.numberOfRow = KYUIntegerOrientationMake(3, 6);
+    
+    KYExpressionViewContainer *container = [KYExpressionViewContainer containerWithLayout:layout items:items];
+    [inputView addToolbarItemWithImage:nil title:@"hah" container:container];
+    
     
     inputView.delegate = self;
     

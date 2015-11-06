@@ -122,4 +122,9 @@
                           title:(NSString *)title
               expressionPackage:(id<KYExpressionPackageProtocol>)package;
 
+
+- (void)addToolbarItemWithImage:(UIImage *)image
+                          title:(NSString *)title
+                      container:(KYExpressionViewContainer *)container ;
+
 @end

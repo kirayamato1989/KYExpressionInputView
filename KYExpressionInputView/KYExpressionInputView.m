@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) KYExpressionViewContainer *container;
 
-@property (nonatomic, strong) NSArray<id<KYExpressionData>> *expressionItems;
+@property (nonatomic, copy) NSArray<id<KYExpressionData>> *expressionItems;
 
 @property (nonatomic, assign) KYSizeOrientation itemSize;
 
@@ -177,6 +177,23 @@
     
 }
 
+- (void)addToolbarItemWithImage:(UIImage *)image title:(NSString *)title container:(KYExpressionViewContainer *)container {
+    
+    //
+    container.frame = self.containerView.bounds;
+    
+    //
+    KYExpressionViewContainerModel *model = [KYExpressionViewContainerModel modelWithItems:[container items] itemSize:container.layout.itemSize itemSpacing:container.layout.itemSpacing row:container.layout.numberOfRow column:container.layout.numberOfColumn];
+    
+    [self.modelArray addObject:model];
+    
+    [self.toolbar addItemWithImage:image title:title];
+    
+    if (self.modelArray.count == 1) {
+        [self.toolbar setSelectedIndex:0];
+    }
+}
+
 - (void)addCustomExpressionImage:(UIImage *)image {
     
 }
@@ -245,8 +262,6 @@
     KYUIntegerOrientation numberOfColumn = model.column;
     
     if (!view) {
-        
-        
         KYExpressionViewContainer *container = [[KYExpressionViewContainer alloc] initWithFrame:self.containerView.bounds];
         container.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         
