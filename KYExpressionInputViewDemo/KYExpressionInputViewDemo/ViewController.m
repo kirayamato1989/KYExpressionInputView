@@ -8,13 +8,11 @@
 
 #import "ViewController.h"
 #import "KYExpression.h"
+#import "UIImage+KYMultiFormate.h"
 
 
 @interface ViewController ()<KYExpressionInputViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
-- (IBAction)slider:(UISlider *)sender;
-- (IBAction)itemSize:(UISlider *)sender;
-
 @end
 
 @implementation ViewController
@@ -44,18 +42,14 @@
     
     [inputView setToolbarSendButtonHidden:YES animated:NO];
     
-    [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:4 column:8 itemSize:CGSizeMake(36, 36) itemSpacing:6];
+    
+    
+    [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:KYUIntegerOrientationMake(4, 4) column:KYUIntegerOrientationMake(8, 14) itemSize:KYSizeOrientationMake(CGSizeMake(36, 36), CGSizeMake(36, 36)) itemSpacing:KYFloatOrientationMake(6, 6)];
     
     
     NSString *iconPath = [kExpressionBundle pathForResource:@"icon" ofType:@"jpg"];
     
-    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
-    
-    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
-    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
-    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
-    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
-    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
+    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:KYUIntegerOrientationMake(2, 2) column:KYUIntegerOrientationMake(4, 8) itemSize:KYSizeOrientationMake(CGSizeMake(50, 50), CGSizeMake(44, 44)) itemSpacing:KYFloatOrientationMake(15, 15)];
     
     inputView.delegate = self;
     
@@ -73,19 +67,5 @@ static BOOL hidden = YES;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (IBAction)slider:(UISlider *)sender {
-    KYExpressionInputView *inputView = (KYExpressionInputView *)self.textField.inputView;
-    
-    inputView.itemSpacing = sender.value * 30.f;
-}
-
-- (IBAction)itemSize:(UISlider *)sender {
-    KYExpressionInputView *inputView = (KYExpressionInputView *)self.textField.inputView;
-    
-    inputView.itemSize = CGSizeMake(50 * sender.value + 10, 50*sender.value + 10);
-    
-}
-
 
 @end

@@ -27,65 +27,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="N67-KE-CYN">
-                                <rect key="frame" x="45" y="81" width="208" height="31"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="9nc-7D-Tu1"/>
-                                    <constraint firstAttribute="width" constant="204" id="Sa6-nT-mWt"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="slider:" destination="EeY-p0-BfW" eventType="valueChanged" id="2iG-Gz-Hc1"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iN8-OM-FEP">
-                                <rect key="frame" x="45" y="150" width="208" height="31"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="A6J-2W-C5p"/>
-                                    <constraint firstAttribute="width" constant="204" id="zFu-Mz-14k"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="itemSize:" destination="EeY-p0-BfW" eventType="valueChanged" id="uZS-lm-O7d"/>
-                                    <action selector="slider:" destination="EeY-p0-BfW" eventType="valueChanged" id="NAQ-W5-xdA"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="itemSize" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBy-9j-Akh">
-                                <rect key="frame" x="120" y="119" width="59" height="21"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="59" id="Rt9-Cr-jfW"/>
-                                    <constraint firstAttribute="height" constant="21" id="cDr-05-OCu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="itemSpacing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKY-Ja-PLJ">
-                                <rect key="frame" x="111" y="45" width="76" height="21"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="76" id="J7w-L4-DLY"/>
-                                    <constraint firstAttribute="height" constant="21" id="LjN-lW-qb3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="N67-KE-CYN" firstAttribute="leading" secondItem="9y8-8Z-ReJ" secondAttribute="leading" constant="47" id="1AS-fC-0IP"/>
-                            <constraint firstItem="mKY-Ja-PLJ" firstAttribute="top" secondItem="uZF-65-QiS" secondAttribute="bottom" constant="25" id="Eu1-Eg-4fe"/>
-                            <constraint firstItem="oBy-9j-Akh" firstAttribute="leading" secondItem="9y8-8Z-ReJ" secondAttribute="leading" constant="120" id="Ixr-ny-YKC"/>
-                            <constraint firstItem="iN8-OM-FEP" firstAttribute="top" secondItem="N67-KE-CYN" secondAttribute="bottom" constant="39" id="Wu8-gm-vfF"/>
-                            <constraint firstItem="mKY-Ja-PLJ" firstAttribute="leading" secondItem="9y8-8Z-ReJ" secondAttribute="leading" constant="111" id="Xsv-GE-5ii"/>
                             <constraint firstItem="nP9-is-LQP" firstAttribute="centerY" secondItem="9y8-8Z-ReJ" secondAttribute="centerY" id="a4r-eS-Hcs"/>
                             <constraint firstItem="nP9-is-LQP" firstAttribute="centerX" secondItem="9y8-8Z-ReJ" secondAttribute="centerX" id="aQH-fK-vuW"/>
-                            <constraint firstItem="oBy-9j-Akh" firstAttribute="top" secondItem="N67-KE-CYN" secondAttribute="bottom" constant="8" id="efU-kl-8MX"/>
-                            <constraint firstItem="N67-KE-CYN" firstAttribute="top" secondItem="uZF-65-QiS" secondAttribute="bottom" constant="61" id="pWy-7f-34C"/>
-                            <constraint firstItem="iN8-OM-FEP" firstAttribute="leading" secondItem="9y8-8Z-ReJ" secondAttribute="leading" constant="47" id="vES-ni-FlD"/>
                         </constraints>
                     </view>
                     <connections>

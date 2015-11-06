@@ -10,13 +10,47 @@
 #import "KYExpressionItem.h"
 #import "UIView+FrameAdjust.h"
 
+@interface KYExpressionViewContainerModel : NSObject
+
+@property (nonatomic, strong) KYExpressionViewContainer *container;
+
+@property (nonatomic, strong) NSArray<id<KYExpressionData>> *expressionItems;
+
+@property (nonatomic, assign) KYSizeOrientation itemSize;
+
+@property (nonatomic, assign) KYFloatOrientation itemSpacing;
+
+@property (nonatomic, assign) KYUIntegerOrientation row;
+
+@property (nonatomic, assign) KYUIntegerOrientation column;
+
++ (instancetype)modelWithItems:(NSArray <id<KYExpressionData>>*)items itemSize:(KYSizeOrientation)itemSize itemSpacing:(KYFloatOrientation)itemSpacing row:(KYUIntegerOrientation)row column:(KYUIntegerOrientation)column;
+
+@end
+
+
+@implementation KYExpressionViewContainerModel
+
++ (instancetype)modelWithItems:(NSArray<id<KYExpressionData>> *)items itemSize:(KYSizeOrientation)itemSize itemSpacing:(KYFloatOrientation)itemSpacing row:(KYUIntegerOrientation)row column:(KYUIntegerOrientation)column {
+    KYExpressionViewContainerModel *model = [[self alloc] init];
+    model.expressionItems = [NSArray arrayWithArray:items];
+    model.itemSize = itemSize;
+    model.itemSpacing = itemSpacing;
+    model.row = row;
+    model.column = column;
+    return model;
+}
+
+
+@end
+
 @interface KYExpressionInputView ()
 
 @property (nonatomic, strong) KYExpressionToolbar *toolbar;
 
 @property (nonatomic, strong) UIView *containerView;
 
-@property (nonatomic, strong) NSMutableArray *itemsConfigArray;
+@property (nonatomic, strong) NSMutableArray *modelArray;
 
 @property (nonatomic, weak) KYExpressionViewContainer *currentDisplayExpressionViewContainer;
 
@@ -33,7 +67,7 @@
     frame.size.width = 320.f;
     if (self = [super initWithFrame:frame]) {
         //self
-        self.itemsConfigArray = [NSMutableArray array];
+        self.modelArray = [NSMutableArray array];
         
         //subview
         self.containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height - 44)];
@@ -97,10 +131,10 @@
     config[@"row"] = @2;
     config[@"column"] = @4;
     
-    [self.itemsConfigArray addObject:config];
+    [self.modelArray addObject:config];
     [self.toolbar addItemWithImage:image title:title];
     
-    if (self.itemsConfigArray.count == 1) {
+    if (self.modelArray.count == 1) {
         [self.toolbar setSelectedIndex:0];
     }
 }
@@ -108,42 +142,32 @@
 - (void)addToolbarItemWithImage:(UIImage *)image
                           title:(NSString *)title
                           items:(NSArray<id<KYExpressionData>> *)items
-                            row:(NSUInteger)row
-                         column:(NSUInteger)column
-                       itemSize:(CGSize)itemSize
-                    itemSpacing:(CGFloat)itemSpacing{
+                            row:(KYUIntegerOrientation)row
+                         column:(KYUIntegerOrientation)column
+                       itemSize:(KYSizeOrientation)itemSize
+                    itemSpacing:(KYFloatOrientation)itemSpacing{
     if (items.count == 0) return;
     
-    NSMutableDictionary *config = [NSMutableDictionary dictionary];
-    config[@"items"] = [self configItemsIfEmoji:items row:row column:column];
-    config[@"itemSize"] = [NSValue valueWithCGSize:itemSize];
-    config[@"itemSpacing"] = @(itemSpacing);
-    config[@"row"] = @(row);
-    config[@"column"] = @(column);
+    KYExpressionViewContainerModel *model = [KYExpressionViewContainerModel modelWithItems:items itemSize:itemSize itemSpacing:itemSpacing row:row column:column];
     
-    [self.itemsConfigArray addObject:config];
+    
+    [self.modelArray addObject:model];
     [self.toolbar addItemWithImage:image title:title];
     
-    if (self.itemsConfigArray.count == 1) {
+    if (self.modelArray.count == 1) {
         [self.toolbar setSelectedIndex:0];
     }
 }
 
 - (void)addToolbarItemWithImage:(UIImage *)image title:(NSString *)title expressionPackage:(id<KYExpressionPackageProtocol>)package {
     if ([package numberOfItems] == 0) return;
+    KYExpressionViewContainerModel *model = [KYExpressionViewContainerModel modelWithItems:[package items] itemSize:KYSizeOrientationMake(CGSizeMake(60, 60), CGSizeMake(60, 60)) itemSpacing:KYFloatOrientationMake(15, 15) row:KYUIntegerOrientationMake(2, 2) column:KYUIntegerOrientationMake(4, 8)];
     
-    NSMutableDictionary *config = [NSMutableDictionary dictionary];
-    config[@"items"] = [self configItemsIfEmoji:[package items] row:2 column:4];
-    config[@"itemSize"] = [NSValue valueWithCGSize:CGSizeMake(60, 60)];
-    config[@"itemSpacing"] = @15;
-    config[@"row"] = @2;
-    config[@"column"] = @4;
-    
-    [self.itemsConfigArray addObject:config];
+    [self.modelArray addObject:model];
     
     [self.toolbar addItemWithImage:image title:title];
     
-    if (self.itemsConfigArray.count == 1) {
+    if (self.modelArray.count == 1) {
         [self.toolbar setSelectedIndex:0];
     }
     
@@ -155,7 +179,7 @@
 }
 
 - (KYExpressionViewContainer *)containerViewAtIndex:(NSUInteger)index {
-    return self.itemsConfigArray[index][@"container"];
+    return self.modelArray[index][@"container"];
 }
 
 - (void)setToolbarSendButtonHidden:(BOOL)hidden animated:(BOOL)animated {
@@ -165,32 +189,33 @@
 #pragma mark private method
 
 - (void)removeContainerAtIndex:(NSUInteger)index {
-    NSDictionary *config = self.itemsConfigArray[index];
+    NSDictionary *config = self.modelArray[index];
     KYExpressionViewContainer *view = config[@"container"];
     
     [view removeFromSuperview];
-    [self.itemsConfigArray removeObjectAtIndex:index];
+    [self.modelArray removeObjectAtIndex:index];
     
     [self.toolbar removeItemAtIndex:index];
     
 }
 
 - (void)configExpressionContainerViewForIndex:(NSUInteger)index{
-    if (index >= self.itemsConfigArray.count) return;
+    if (index >= self.modelArray.count) return;
     
-    NSMutableDictionary *config = self.itemsConfigArray[index];
+//    NSMutableDictionary *config = self.modelArray[index];
+    KYExpressionViewContainerModel *model = self.modelArray[index];
     
-    KYExpressionViewContainer *view = config[@"container"];
+    KYExpressionViewContainer *view = model.container;
     
-    NSArray *items = config[@"items"];
+    NSArray *items = model.expressionItems;
     
-    CGSize itemSize = [config[@"itemSize"] CGSizeValue];
+    KYSizeOrientation itemSize = model.itemSize;
     
-    CGFloat itemSpacing = [config[@"itemSpacing"] floatValue];
+    KYFloatOrientation itemSpacing = model.itemSpacing;
     
-    NSUInteger numberOfRow = [config[@"row"] unsignedIntegerValue];
+    KYUIntegerOrientation numberOfRow = model.row;
     
-    NSUInteger numberOfColumn = [config[@"column"] unsignedIntegerValue];
+    KYUIntegerOrientation numberOfColumn = model.column;
     
     if (self.currentDisplayExpressionViewContainer == view&&self.currentDisplayExpressionViewContainer) {
         return;
@@ -223,7 +248,7 @@
         
         view = container;
         
-        config[@"container"] = container;
+        model.container = container;
     }
     else if ([view isKindOfClass:[KYExpressionViewContainer class]]) {
         KYExpressionContainerLayout *layout = [view layout];
@@ -270,12 +295,12 @@
 
 #pragma mark setter&&getter
 
-- (void)setItemSpacing:(CGFloat)itemSpacing {
-    if (_itemSpacing != itemSpacing) {
+- (void)setItemSpacing:(KYFloatOrientation)itemSpacing {
+    if (!KYFloatIsEqual(_itemSpacing, itemSpacing)) {
         _itemSpacing = itemSpacing;
         
-        for (NSMutableDictionary *config in self.itemsConfigArray) {
-            config[@"itemSpacing"] = @(itemSpacing);
+        for (KYExpressionViewContainerModel *model in self.modelArray) {
+            model.itemSpacing = itemSpacing;
             if ([self.currentDisplayExpressionViewContainer isKindOfClass:[KYExpressionViewContainer class]]) {
                 KYExpressionContainerLayout *layout = [(KYExpressionViewContainer *)self.currentDisplayExpressionViewContainer layout];
                 layout.itemSpacing = itemSpacing;
@@ -284,12 +309,12 @@
     }
 }
 
-- (void)setItemSize:(CGSize)itemSize {
-    if (!CGSizeEqualToSize(_itemSize, itemSize)) {
+- (void)setItemSize:(KYSizeOrientation)itemSize {
+    if (!KYSizeIsEqual(_itemSize, itemSize)) {
         _itemSize = itemSize;
         
-        for (NSMutableDictionary *config in self.itemsConfigArray) {
-            config[@"itemSize"] = [NSValue valueWithCGSize:itemSize];
+        for (KYExpressionViewContainerModel *model in self.modelArray) {
+            model.itemSize = itemSize;
             if ([self.currentDisplayExpressionViewContainer isKindOfClass:[KYExpressionViewContainer class]]) {
                 KYExpressionContainerLayout *layout = [(KYExpressionViewContainer *)self.currentDisplayExpressionViewContainer layout];
                 layout.itemSize = itemSize;
@@ -304,7 +329,7 @@
 - (void)setHiddenEmoji:(BOOL)hiddenEmoji {
     if (_hiddenEmoji != hiddenEmoji) {
         if (hiddenEmoji) {
-            NSMutableDictionary *config = self.itemsConfigArray[0];
+            NSMutableDictionary *config = self.modelArray[0];
             NSArray *items = config[@"items"];
             if ([[items firstObject] dataType] == kExpressionDataTypeEmoji) {
                [self removeContainerAtIndex:0];

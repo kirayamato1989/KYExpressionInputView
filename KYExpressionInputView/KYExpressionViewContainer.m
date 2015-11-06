@@ -145,7 +145,12 @@
     
     [self.expressionCollectionView reloadData];
     
-    self.pageControl.numberOfPages = self.layout.numberOfPage;
+    self.pageControl.numberOfPages = KYUIntegerForCurrentOrientation(self.layout.numberOfPage);
+    
+    // 防止屏幕翻转时contentoffset出错
+    CGPoint contentOffset = self.expressionCollectionView.contentOffset;
+    contentOffset.x = self.pageControl.currentPage * self.expressionCollectionView.bounds.size.width;
+    self.expressionCollectionView.contentOffset = contentOffset;
 }
 
 #pragma mark DataSource
@@ -216,7 +221,7 @@
     self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.frame) - 20, self.bounds.size.width, 20)];
     self.pageControl.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
     
-    self.pageControl.numberOfPages = self.layout.numberOfPage;
+    self.pageControl.numberOfPages = KYUIntegerForCurrentOrientation(self.layout.numberOfPage);
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     self.pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     self.pageControl.currentPage = 0;

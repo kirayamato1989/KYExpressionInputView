@@ -34,9 +34,9 @@
 
 @property (nonatomic, strong) UIColor *senderButtonColor;
 
-@property (nonatomic, assign) CGFloat itemSpacing;
+@property (nonatomic, assign) KYFloatOrientation itemSpacing;
 
-@property (nonatomic, assign) CGSize itemSize;
+@property (nonatomic, assign) KYSizeOrientation itemSize;
 
 @property (nonatomic, assign) id<KYExpressionInputViewDelegate> delegate;
 
@@ -96,10 +96,10 @@
 - (void)addToolbarItemWithImage:(UIImage *)image
                            title:(NSString *)title
                            items:(NSArray<id<KYExpressionData>> *)items
-                             row:(NSUInteger)row
-                          column:(NSUInteger)column
-                        itemSize:(CGSize)itemSize
-                     itemSpacing:(CGFloat)itemSpacing;
+                             row:(KYUIntegerOrientation)row
+                          column:(KYUIntegerOrientation)column
+                        itemSize:(KYSizeOrientation)itemSize
+                     itemSpacing:(KYFloatOrientation)itemSpacing;
 
 
 - (void)addToolbarItemWithImage:(UIImage *)image

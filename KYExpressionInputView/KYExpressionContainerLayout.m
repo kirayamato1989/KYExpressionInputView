@@ -8,11 +8,96 @@
 
 #import "KYExpressionContainerLayout.h"
 
+
+inline KYUIntegerOrientation KYUIntegerOrientationMake (NSUInteger portrait ,NSUInteger landscape ) {
+    KYUIntegerOrientation value;
+    value.uintegerForOrientationPortrait = portrait;
+    value.uintegerForOrientationLandscape = landscape;
+    return value;
+}
+
+inline NSUInteger KYUIntegerForCurrentOrientation (KYUIntegerOrientation value) {
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    if (UIDeviceOrientationIsPortrait(orientation)) {
+        return value.uintegerForOrientationPortrait;
+    }
+    else{
+        return value.uintegerForOrientationLandscape;
+    }
+}
+
+inline BOOL KYUIntegerIsEqual (KYUIntegerOrientation value1, KYUIntegerOrientation value2)
+{
+    if (value1.uintegerForOrientationPortrait != value2.uintegerForOrientationPortrait) {
+        return NO;
+    }
+    if (value1.uintegerForOrientationLandscape != value2.uintegerForOrientationLandscape) {
+        return NO;
+    }
+    return YES;
+}
+
+inline KYSizeOrientation KYSizeOrientationMake (CGSize portrait, CGSize landscape) {
+    KYSizeOrientation size;
+    size.sizeForOrientationPortrait = portrait;
+    size.sizeForOrientationLandscape = landscape;
+    return size;
+}
+
+inline CGSize KYSizeForCurrentOrientation (KYSizeOrientation value) {
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    if (UIDeviceOrientationIsPortrait(orientation)) {
+        return value.sizeForOrientationPortrait;
+    }
+    else{
+        return value.sizeForOrientationLandscape;
+    }
+}
+
+inline BOOL KYSizeIsEqual (KYSizeOrientation value1, KYSizeOrientation value2) {
+    
+    if (!CGSizeEqualToSize(value1.sizeForOrientationPortrait, value2.sizeForOrientationPortrait)) {
+        return NO;
+    }
+    if (CGSizeEqualToSize(value1.sizeForOrientationLandscape, value2.sizeForOrientationLandscape)) {
+        return NO;
+    }
+    return YES;
+}
+
+inline KYFloatOrientation KYFloatOrientationMake (CGFloat portrait, CGFloat landscape) {
+    KYFloatOrientation value;
+    value.floatForOrientationPortrait = portrait;
+    value.floatForOrientationLandscape = landscape;
+    return value;
+}
+
+inline CGFloat KYFloatForCurrentOrientation (KYFloatOrientation value) {
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    if (UIDeviceOrientationIsPortrait(orientation)) {
+        return value.floatForOrientationPortrait;
+    }
+    else{
+        return value.floatForOrientationLandscape;
+    }
+}
+
+
+inline BOOL KYFloatIsEqual(KYFloatOrientation value1, KYFloatOrientation value2) {
+    if (value1.floatForOrientationPortrait != value2.floatForOrientationPortrait) {
+        return NO;
+    }
+    if (value1.floatForOrientationLandscape != value2.floatForOrientationLandscape) {
+        return NO;
+    }
+    return YES;
+}
+
 @interface KYExpressionContainerLayout ()
 
-@property (nonatomic, strong) NSMutableArray *cache;
+@property (nonatomic, strong) NSMutableDictionary *cache;
 
-@property (nonatomic, assign) CGSize cachedCollectionViewSize;
+@property (nonatomic, assign) KYSizeOrientation cachedCollectionViewSize;
 
 @end
 
@@ -20,10 +105,11 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _numberOfRow = 2;
-        _numberOfColumn = 4;
-        _itemSize = CGSizeMake(60, 60);
-        _itemSpacing = 10;
+        _cache = [NSMutableDictionary dictionaryWithCapacity:2];
+        _numberOfRow = KYUIntegerOrientationMake(2, 2);
+        _numberOfColumn = KYUIntegerOrientationMake(4, 8);
+        _itemSize = KYSizeOrientationMake(CGSizeMake(50, 50), CGSizeMake(50, 50));
+        _itemSpacing = KYFloatOrientationMake(10, 10);
     }
     return self;
 }
@@ -31,42 +117,58 @@
 - (void)prepareLayout {
     NSUInteger numberOfItem = [self.collectionView numberOfItemsInSection:0];
     
+    UIDeviceOrientation oriention = [[UIDevice currentDevice] orientation];
+    
+    BOOL isPortrait = UIDeviceOrientationIsPortrait(oriention);
     // 个数有改变
-    if (self.cache.count != numberOfItem || !CGSizeEqualToSize(self.cachedCollectionViewSize, self.collectionView.bounds.size)) {
+    NSArray *cache = [self cacheForIsPortrait:isPortrait];
+    
+    if (cache.count != numberOfItem || !CGSizeEqualToSize([self cachedCollectionViewSizeForCurrentOrientation], self.collectionView.bounds.size)) {
         
-        self.cachedCollectionViewSize = self.collectionView.bounds.size;
+        [self setCachedCollectionViewSizeForCurrentOrientation:self.collectionView.bounds.size];
         
-        // 为空
-        if (!self.cache) {
-            self.cache = [NSMutableArray array];
-        }
-        
-        // 清空
-        [self.cache removeAllObjects];
+        NSMutableArray *newCache = [NSMutableArray array];
         
         // 边距
-        CGFloat topSpacing = (self.collectionView.bounds.size.height - (self.numberOfRow*self.itemSize.height + (self.numberOfRow - 1)*self.itemSpacing))/2.f;
+        CGSize itemSize = KYSizeForCurrentOrientation(self.itemSize);
+        NSUInteger numberOfRow = KYUIntegerForCurrentOrientation(self.numberOfRow);
+        NSUInteger numberOfColumn = KYUIntegerForCurrentOrientation(self.numberOfColumn);
+        CGFloat itemSpacing = KYFloatForCurrentOrientation(self.itemSpacing);
         
-        CGFloat letfSpacing = (self.collectionView.bounds.size.width - (self.numberOfColumn*self.itemSize.width + (self.numberOfColumn - 1)*self.itemSpacing))/2.f;
         
-        CGSize itemSize = self.itemSize;
+        CGFloat topSpacing = (self.collectionView.bounds.size.height - (numberOfRow*itemSize.height + (numberOfRow - 1)*itemSpacing))/2.f;
+        
+        CGFloat letfSpacing = (self.collectionView.bounds.size.width - (numberOfColumn*itemSize.width + (numberOfColumn - 1)*itemSpacing))/2.f;
         
         // 判断itemSize是否合适
         if (topSpacing<0) {
-            itemSize.height -= ceilf(fabs(2*topSpacing)/self.numberOfRow);
+            itemSize.height -= ceilf(fabs(2*topSpacing)/numberOfRow);
             
-            topSpacing = (self.collectionView.bounds.size.height - (self.numberOfRow*itemSize.height + (self.numberOfRow - 1)*self.itemSpacing))/2.f;
+            topSpacing = (self.collectionView.bounds.size.height - (numberOfRow*itemSize.height + (numberOfRow - 1)*itemSpacing))/2.f;
         }
         
         if (letfSpacing<0) {
-            itemSize.width -= ceilf(fabs(2*letfSpacing)/self.numberOfColumn);
+            itemSize.width -= ceilf(fabs(2*letfSpacing)/numberOfColumn);
             
-            letfSpacing = (self.collectionView.bounds.size.width - (self.numberOfColumn*itemSize.width + (self.numberOfColumn - 1)*self.itemSpacing))/2.f;
+            letfSpacing = (self.collectionView.bounds.size.width - (numberOfColumn*itemSize.width + (numberOfColumn - 1)*itemSpacing))/2.f;
         }
         
-        NSAssert(self.numberOfColumn*self.numberOfRow, @"row or column can not be zero");
+        NSAssert(numberOfColumn*numberOfRow, @"row or column can not be zero");
         
-        self.numberOfPage = (numberOfItem/(self.numberOfRow*self.numberOfColumn)) + (numberOfItem%(self.numberOfRow*self.numberOfColumn)>0?1:0);
+        
+        
+        NSUInteger numberOfPage = (numberOfItem/(numberOfRow*numberOfColumn)) + (numberOfItem%(numberOfRow*numberOfColumn)>0?1:0);
+        if (isPortrait) {
+            KYUIntegerOrientation newValue = self.numberOfPage;
+            newValue.uintegerForOrientationPortrait = numberOfPage;
+            self.numberOfPage = newValue;
+        }
+        else{
+            KYUIntegerOrientation newValue = self.numberOfPage;
+            newValue.uintegerForOrientationLandscape = numberOfPage;
+            self.numberOfPage = newValue;
+        }
+        
         
         for (int i = 0; i < numberOfItem; i++) {
             //1
@@ -74,24 +176,27 @@
             
             UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
             
-            NSUInteger page = i/(self.numberOfRow*self.numberOfColumn);
+            NSUInteger page = i/(numberOfRow*numberOfColumn);
             
-            NSUInteger indexAtPage = i - page * (self.numberOfColumn * self.numberOfRow);
+            NSUInteger indexAtPage = i - page * (numberOfColumn * numberOfRow);
             
-            NSUInteger row = indexAtPage/self.numberOfColumn;
+            NSUInteger row = indexAtPage/numberOfColumn;
             
-            NSUInteger column = indexAtPage%self.numberOfColumn;
+            NSUInteger column = indexAtPage%numberOfColumn;
             
-            attributes.frame = CGRectMake(page * self.collectionView.bounds.size.width + letfSpacing + column*(itemSize.width + self.itemSpacing) , topSpacing + row*(itemSize.height + self.itemSpacing), itemSize.width, itemSize.height);
+            attributes.frame = CGRectMake(page * self.collectionView.bounds.size.width + letfSpacing + column*(itemSize.width + itemSpacing) , topSpacing + row*(itemSize.height + itemSpacing), itemSize.width, itemSize.height);
 
-            [self.cache addObject:attributes];
+            [newCache addObject:attributes];
         }
+        
+        [self updateCache:newCache isPortrait:isPortrait];
     }
 }
 
 
 - (CGSize)collectionViewContentSize {
-    CGSize contentSize = CGSizeMake(self.numberOfPage * self.collectionView.bounds.size.width, self.collectionView.bounds.size.height);
+    NSUInteger page = KYUIntegerForCurrentOrientation(self.numberOfPage);
+    CGSize contentSize = CGSizeMake(page * self.collectionView.bounds.size.width, self.collectionView.bounds.size.height);
     return contentSize;
 }
 
@@ -99,7 +204,7 @@
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
     NSMutableArray *attributesArray = [NSMutableArray array];
     
-    for (UICollectionViewLayoutAttributes *attributes in self.cache) {
+    for (UICollectionViewLayoutAttributes *attributes in [self cacheForCurrentPortrait]) {
         if (CGRectIntersectsRect(attributes.frame, rect)) {
             [attributesArray addObject:attributes];
         }
@@ -107,8 +212,35 @@
     return attributesArray;
 }
 
-- (void)setItemSize:(CGSize)itemSize {
-    if (!CGSizeEqualToSize(_itemSize, itemSize)) {
+- (NSArray *)cacheForCurrentPortrait {
+    UIDeviceOrientation oriention = [[UIDevice currentDevice] orientation];
+    
+    BOOL isPortrait = UIDeviceOrientationIsPortrait(oriention);
+    
+    return [self cacheForIsPortrait:isPortrait];
+}
+
+- (NSArray *)cacheForIsPortrait:(BOOL)b {
+    NSString *key = b?@"portrait":@"landscape";
+    return self.cache[key];
+}
+
+- (void)updateCache:(NSArray *)newValue isPortrait:(BOOL)b {
+    NSString *key = b?@"portrait":@"landscape";
+    
+    NSMutableArray *array = self.cache[key];
+    
+    if (!array) {
+        array = [NSMutableArray array];
+        self.cache[key] = array;
+    }
+    [array removeAllObjects];
+    [array addObjectsFromArray:newValue];
+}
+
+
+- (void)setItemSize:(KYSizeOrientation)itemSize {
+    if (!KYSizeIsEqual(_itemSize, itemSize)) {
         _itemSize = itemSize;
         [self.cache removeAllObjects];
         
@@ -116,8 +248,8 @@
     }
 }
 
-- (void)setItemSpacing:(CGFloat)itemSpacing {
-    if (_itemSpacing != itemSpacing) {
+- (void)setItemSpacing:(KYFloatOrientation)itemSpacing {
+    if (!KYFloatIsEqual(_itemSpacing, itemSpacing)) {
         _itemSpacing = itemSpacing;
         [self.cache removeAllObjects];
         
@@ -125,8 +257,8 @@
     }
 }
 
-- (void)setNumberOfRow:(NSUInteger)numberOfRow {
-    if (_numberOfRow != numberOfRow) {
+- (void)setNumberOfRow:(KYUIntegerOrientation)numberOfRow {
+    if (!KYUIntegerIsEqual(_numberOfRow, numberOfRow)) {
         _numberOfRow = numberOfRow;
         
         [self.cache removeAllObjects];
@@ -135,13 +267,33 @@
     }
 }
 
-- (void)setNumberOfColumn:(NSUInteger)numberOfColumn {
-    if (_numberOfColumn != numberOfColumn) {
+- (void)setNumberOfColumn:(KYUIntegerOrientation)numberOfColumn {
+    if (!KYUIntegerIsEqual(_numberOfColumn, numberOfColumn)) {
         _numberOfColumn = numberOfColumn;
         
         [self.cache removeAllObjects];
         
         [self.collectionView reloadData];
+    }
+}
+
+- (void)setCachedCollectionViewSizeForCurrentOrientation:(CGSize)size {
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    if (UIDeviceOrientationIsPortrait(orientation)) {
+        _cachedCollectionViewSize.sizeForOrientationPortrait = size;
+    }
+    else {
+        _cachedCollectionViewSize.sizeForOrientationLandscape = size;
+    }
+}
+
+- (CGSize)cachedCollectionViewSizeForCurrentOrientation {
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    if (UIDeviceOrientationIsPortrait(orientation)) {
+        return _cachedCollectionViewSize.sizeForOrientationPortrait;
+    }
+    else {
+        return _cachedCollectionViewSize.sizeForOrientationLandscape;
     }
 }
 

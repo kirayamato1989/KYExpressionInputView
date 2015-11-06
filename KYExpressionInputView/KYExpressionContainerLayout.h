@@ -8,32 +8,74 @@
 
 #import <UIKit/UIKit.h>
 
+struct KYUIntegerOrientation {
+    NSUInteger uintegerForOrientationPortrait;
+    NSUInteger uintegerForOrientationLandscape;
+};
+
+typedef struct KYUIntegerOrientation KYUIntegerOrientation;
+
+KYUIntegerOrientation KYUIntegerOrientationMake(NSUInteger, NSUInteger);
+
+NSUInteger KYUIntegerForCurrentOrientation(KYUIntegerOrientation);
+
+BOOL KYUIntegerIsEqual(KYUIntegerOrientation, KYUIntegerOrientation);
+
+
+
+struct KYSizeOrientation {
+    CGSize sizeForOrientationPortrait;
+    CGSize sizeForOrientationLandscape;
+};
+
+typedef struct KYSizeOrientation KYSizeOrientation;
+
+KYSizeOrientation KYSizeOrientationMake(CGSize, CGSize);
+
+CGSize KYSizeForCurrentOrientation(KYSizeOrientation);
+
+BOOL KYSizeIsEqual(KYSizeOrientation, KYSizeOrientation);
+
+
+
+struct KYFloatOrientation {
+    CGFloat floatForOrientationPortrait;
+    CGFloat floatForOrientationLandscape;
+};
+typedef struct KYFloatOrientation KYFloatOrientation;
+
+KYFloatOrientation KYFloatOrientationMake(CGFloat, CGFloat);
+
+CGFloat KYFloatForCurrentOrientation(KYFloatOrientation);
+
+BOOL KYFloatIsEqual(KYFloatOrientation, KYFloatOrientation);
+
 @interface KYExpressionContainerLayout : UICollectionViewLayout
 
 /**
  *  每页表情行数
  */
-@property (nonatomic, assign) NSUInteger numberOfRow;
+@property (nonatomic, assign) KYUIntegerOrientation numberOfRow;
 
 /**
  *  每页表情列数
  */
-@property (nonatomic, assign) NSUInteger numberOfColumn;
+@property (nonatomic, assign) KYUIntegerOrientation numberOfColumn;
 
 /**
  *  表情的页数
  */
-@property (nonatomic, assign) NSUInteger numberOfPage;
+@property (nonatomic, assign) KYUIntegerOrientation numberOfPage;
 
 /**
  *  表情间距
  */
-@property (nonatomic, assign) CGFloat itemSpacing;
+@property (nonatomic, assign) KYFloatOrientation itemSpacing;
 
 /**
  * 每个表情的Size
  */
-@property (nonatomic, assign) CGSize itemSize;
+@property (nonatomic, assign) KYSizeOrientation itemSize;
 
 
 @end
