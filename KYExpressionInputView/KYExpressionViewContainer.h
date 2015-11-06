@@ -40,7 +40,7 @@ typedef NS_ENUM(NSUInteger, KYExpressionViewContainerType) {
 - (NSArray <id<KYExpressionData>>*)items;
 
 
-- (void)setItems:(NSArray *)items;
+- (void)setItems:(NSArray <id<KYExpressionData>>*)items;
 
 /**
  *  添加自定义表情

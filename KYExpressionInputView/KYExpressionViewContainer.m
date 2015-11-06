@@ -249,7 +249,7 @@
     return [NSArray arrayWithArray:self.dataArray];
 }
 
-- (void)setItems:(NSArray *)items {
+- (void)setItems:(NSArray <id<KYExpressionData>>*)items {
     self.dataArray = items.mutableCopy;
     [self.expressionCollectionView reloadData];
 }
