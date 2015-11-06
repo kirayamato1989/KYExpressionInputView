@@ -232,6 +232,7 @@
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     self.pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     self.pageControl.currentPage = 0;
+    [self.pageControl addTarget:self action:@selector(pageControlDidChange:) forControlEvents:UIControlEventValueChanged];
     [self addSubview:self.pageControl];
 }
 
@@ -260,5 +261,11 @@
     [self.expressionCollectionView insertItemsAtIndexPaths:@[indexPath]];
 }
 
+
+- (void)pageControlDidChange:(UIPageControl *)pageControl {
+    NSUInteger currentPage = pageControl.currentPage;
+    CGPoint contentOffset = CGPointMake(self.expressionCollectionView.bounds.size.width*currentPage, 0);
+    self.expressionCollectionView.contentOffset = contentOffset;
+}
 
 @end
