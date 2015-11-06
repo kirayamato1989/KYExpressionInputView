@@ -13,7 +13,7 @@
 
 - (NSUInteger)numberOfItems;
 
-- (id<KYExpressionData>)itemAtIndex:(int)index;
+- (id<KYExpressionData>)itemAtIndex:(NSUInteger)index;
 
 - (NSArray<id<KYExpressionData>> *)items;
 
