@@ -44,23 +44,21 @@
     
     
     
-    [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:KYUIntegerOrientationMake(4, 4) column:KYUIntegerOrientationMake(8, 14) itemSize:KYSizeOrientationMake(CGSizeMake(36, 36), CGSizeMake(36, 36)) itemSpacing:KYFloatOrientationMake(6, 6)];
+    [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:KYUIntegerOrientationMake(4, 5) column:KYUIntegerOrientationMake(8, 14) itemSize:KYSizeOrientationMake(CGSizeMake(36, 36), CGSizeMake(36, 36)) itemSpacing:KYFloatOrientationMake(6, 8)];
     
     
     NSString *iconPath = [kExpressionBundle pathForResource:@"icon" ofType:@"jpg"];
     
-    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:KYUIntegerOrientationMake(2, 2) column:KYUIntegerOrientationMake(4, 8) itemSize:KYSizeOrientationMake(CGSizeMake(50, 50), CGSizeMake(44, 44)) itemSpacing:KYFloatOrientationMake(15, 15)];
+    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:KYUIntegerOrientationMake(2, 3) column:KYUIntegerOrientationMake(6, 10) itemSize:KYSizeOrientationMake(CGSizeMake(50, 50), CGSizeMake(44, 44)) itemSpacing:KYFloatOrientationMake(15, 15)];
     
     inputView.delegate = self;
     
     self.textField.inputView = inputView;
 }
 
-static BOOL hidden = YES;
+
 - (void)inputView:(KYExpressionInputView *)inputView didSelectExpression:(id<KYExpressionData>)expression {
     NSLog(@"%@",[expression image]);
-    hidden = !hidden;
-    [inputView setToolbarSendButtonHidden:hidden animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
