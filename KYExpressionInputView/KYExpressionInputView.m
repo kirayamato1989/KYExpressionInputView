@@ -189,8 +189,20 @@
     [self.toolbar setSendButtonHidden:hidden animated:animated];
 }
 
-- (void)updateItemSize:(KYSizeOrientation)itemSize conatinerAtInde:(NSUInteger)index {
-    
+- (void)updateItemSize:(KYSizeOrientation)itemSize conatinerAtIndex:(NSUInteger)index {
+    KYExpressionViewContainerModel *model = self.modelArray[index];
+    model.itemSize = itemSize;
+    if (self.currentDisplayExpressionViewContainer == model.container) {
+        model.container.layout.itemSize = itemSize;
+    }
+}
+
+- (void)updateItemSpacing:(KYFloatOrientation)itemSpacing containerAtIndex:(NSUInteger)index {
+    KYExpressionViewContainerModel *model = self.modelArray[index];
+    model.itemSpacing = itemSpacing;
+    if (self.currentDisplayExpressionViewContainer == model.container) {
+        model.container.layout.itemSpacing = itemSpacing;
+    }
 }
 
 #pragma mark private method
