@@ -42,6 +42,8 @@
         [emojiItems addObject:item];
     }
     
+    [inputView setToolbarSendButtonHidden:YES animated:NO];
+    
     [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:4 column:8 itemSize:CGSizeMake(36, 36) itemSpacing:6];
     
     
@@ -49,14 +51,22 @@
     
     [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
     
+    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
+    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
+    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
+    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
+    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:2 column:4 itemSize:CGSizeMake(58, 58) itemSpacing:15];
     
     inputView.delegate = self;
     
     self.textField.inputView = inputView;
 }
 
+static BOOL hidden = YES;
 - (void)inputView:(KYExpressionInputView *)inputView didSelectExpression:(id<KYExpressionData>)expression {
     NSLog(@"%@",[expression image]);
+    hidden = !hidden;
+    [inputView setToolbarSendButtonHidden:hidden animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

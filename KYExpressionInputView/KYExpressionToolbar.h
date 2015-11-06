@@ -18,14 +18,16 @@ typedef void (^selectedIndexChangeBlock) (NSUInteger index);
 
 @property (nonatomic, copy) selectedIndexChangeBlock selectBlock;
 
-@property (nonatomic, assign) NSUInteger selectedIndex;
+@property (nonatomic, assign, readonly) NSUInteger selectedIndex;
 
-- (void) toggleSendButtonEnable:(BOOL)enable;
+- (void)setSendButtonHidden:(BOOL)hidden animated:(BOOL)animated;
 
-- (void) addItemWithImage:(UIImage *)image title:(NSString *)title;
+- (void)toggleSendButtonEnable:(BOOL)enable;
 
-- (void) removeItemAtIndex:(NSUInteger)index;
+- (void)addItemWithImage:(UIImage *)image title:(NSString *)title;
 
-- (void) setSelectedIndex:(NSUInteger)index;
+- (void)removeItemAtIndex:(NSUInteger)index;
+
+- (void)setSelectedIndex:(NSUInteger)index;
 
 @end

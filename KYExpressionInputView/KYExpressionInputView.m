@@ -158,6 +158,10 @@
     return self.itemsConfigArray[index][@"container"];
 }
 
+- (void)setToolbarSendButtonHidden:(BOOL)hidden animated:(BOOL)animated {
+    [self.toolbar setSendButtonHidden:hidden animated:animated];
+}
+
 #pragma mark private method
 
 - (void)removeContainerAtIndex:(NSUInteger)index {

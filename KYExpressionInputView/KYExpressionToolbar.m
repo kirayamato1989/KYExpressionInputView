@@ -189,7 +189,7 @@
 }
 
 
-- (void) toolbarItemClick:(KYExpressionToolbarItem *)item {
+- (void)toolbarItemClick:(KYExpressionToolbarItem *)item {
     //改变选中状态
     if (item) {
         if (self.selectedItem != item) {
@@ -221,6 +221,26 @@
             
         }
     }
+}
+
+- (void)setSendButtonHidden:(BOOL)hidden animated:(BOOL)animated {
+    //
+    if (self.sendButton.hidden == hidden) return;
+    
+    //
+    CGFloat animatedDuration = animated?0.4f:0.f;
+    
+    if (!hidden) {
+        self.sendButton.hidden = hidden;
+    }
+    
+    [UIView animateWithDuration:animatedDuration animations:^{
+        CGFloat delta = hidden?self.sendButton.width:-self.sendButton.width;
+        self.sendButton.x += delta;
+        self.scrollView.width += delta;
+    } completion:^(BOOL finished) {
+        self.sendButton.hidden = hidden;
+    }];
 }
 
 @end

@@ -25,6 +25,8 @@
 
 @interface KYExpressionInputView : UIView
 
+@property (nonatomic, readonly) KYExpressionToolbar *toolbar;
+
 // Colors
 @property (nonatomic, strong) UIColor *toolbarColor;
 
@@ -49,6 +51,14 @@
 // default NO, when YES the toolBar will hide
 @property (nonatomic, assign) BOOL hiddenToolBar;
 
+
+/**
+ *  隐藏和显示发送按钮
+ *
+ *  @param hidden
+ *  @param animated
+ */
+- (void)setToolbarSendButtonHidden:(BOOL)hidden animated:(BOOL)animated;
 
 /**
  *  获取expressionViewContainer
