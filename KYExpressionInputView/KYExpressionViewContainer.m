@@ -43,8 +43,6 @@
         _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         _textLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
         
-        _textLabel.font = [UIFont systemFontOfSize:15.f];
-        
         _textLabel.textColor = [UIColor blackColor];
         
         _textLabel.textAlignment = NSTextAlignmentCenter;
@@ -72,6 +70,10 @@
             case kExpressionDataTypeEmoji:
                 [self showBorder:NO];
                 _textLabel.hidden = NO;
+                
+                // adjust font to the cell bounds
+                _textLabel.font = [UIFont systemFontOfSize:MIN(self.bounds.size.width, self.bounds.size.height)/2];
+                
                 _textLabel.text = [expressionItem text];
                 break;
             case kExpressionDataTypeImage:
