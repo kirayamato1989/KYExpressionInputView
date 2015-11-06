@@ -154,6 +154,8 @@
     
     self.pageControl.numberOfPages = KYUIntegerForCurrentOrientation(self.layout.numberOfPage);
     
+    [self.pageControl setNeedsDisplay];
+    
     // 防止屏幕翻转时contentoffset出错
     CGPoint contentOffset = self.expressionCollectionView.contentOffset;
     contentOffset.x = self.pageControl.currentPage * self.expressionCollectionView.bounds.size.width;
@@ -257,8 +259,7 @@
 
 - (void)addExpressionItem:(id<KYExpressionData>)item {
     [self.dataArray addObject:item];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.dataArray.count - 1 inSection:0];
-    [self.expressionCollectionView insertItemsAtIndexPaths:@[indexPath]];
+    [self layoutSubviews];
 }
 
 
