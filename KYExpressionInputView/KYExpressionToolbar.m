@@ -183,7 +183,10 @@
 
 - (void)setSelectedIndex:(NSUInteger)index {
     if (index<self.items.count) {
+        _selectedIndex = index;
+        
         KYExpressionToolbarItem *item = self.items[index];
+        
         [self toolbarItemClick:item];
     }
 }
@@ -196,7 +199,7 @@
             self.selectedItem.selected = NO;
             item.selected = YES;
             self.selectedItem = item;
-            self.selectedIndex = item.tag - 1;
+            _selectedIndex = item.tag - 1;
             if (self.selectBlock) {
                 self.selectBlock(item.tag -1);
             }
