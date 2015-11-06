@@ -18,7 +18,7 @@ inline KYUIntegerOrientation KYUIntegerOrientationMake (NSUInteger portrait ,NSU
 
 inline NSUInteger KYUIntegerForCurrentOrientation (KYUIntegerOrientation value) {
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-    if (UIDeviceOrientationIsPortrait(orientation)) {
+    if (UIDeviceOrientationIsPortrait(orientation)||orientation == UIDeviceOrientationUnknown) {
         return value.uintegerForOrientationPortrait;
     }
     else{
@@ -46,7 +46,7 @@ inline KYSizeOrientation KYSizeOrientationMake (CGSize portrait, CGSize landscap
 
 inline CGSize KYSizeForCurrentOrientation (KYSizeOrientation value) {
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-    if (UIDeviceOrientationIsPortrait(orientation)) {
+    if (UIDeviceOrientationIsPortrait(orientation)||orientation == UIDeviceOrientationUnknown) {
         return value.sizeForOrientationPortrait;
     }
     else{
@@ -74,7 +74,7 @@ inline KYFloatOrientation KYFloatOrientationMake (CGFloat portrait, CGFloat land
 
 inline CGFloat KYFloatForCurrentOrientation (KYFloatOrientation value) {
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-    if (UIDeviceOrientationIsPortrait(orientation)) {
+    if (UIDeviceOrientationIsPortrait(orientation)||orientation == UIDeviceOrientationUnknown) {
         return value.floatForOrientationPortrait;
     }
     else{

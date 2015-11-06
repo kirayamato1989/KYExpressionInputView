@@ -53,6 +53,13 @@
 
 
 /**
+ * 更新某个container的itemSize
+ *
+ *  @param itemSize new value
+ */
+- (void)updateItemSize:(KYSizeOrientation)itemSize conatinerAtInde:(NSUInteger)index;
+
+/**
  *  隐藏和显示发送按钮
  *
  *  @param hidden

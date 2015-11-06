@@ -95,7 +95,10 @@
         //切换输入数据源
         _toolbar.selectBlock = ^ (NSUInteger index) {
             [weakSelf configExpressionContainerViewForIndex:index];
+            [weakSelf showContainerAtIndex:index];
         };
+        
+        [self registObserver];
         
         [self.toolbar setSelectedIndex:0];
     }
@@ -105,6 +108,7 @@
 #pragma mark lifeCycle
 
 - (void)dealloc {
+    [self removeObserver];
     NSLog(@"KYExpressionInputView--dealloc");
 }
 
@@ -175,18 +179,30 @@
 
 - (void)addCustomExpressionImage:(UIImage *)image {
     
-    
 }
 
 - (KYExpressionViewContainer *)containerViewAtIndex:(NSUInteger)index {
-    return self.modelArray[index][@"container"];
+    return [self.modelArray[index] container];
 }
 
 - (void)setToolbarSendButtonHidden:(BOOL)hidden animated:(BOOL)animated {
     [self.toolbar setSendButtonHidden:hidden animated:animated];
 }
 
+- (void)updateItemSize:(KYSizeOrientation)itemSize conatinerAtInde:(NSUInteger)index {
+    
+}
+
 #pragma mark private method
+
+- (void)showContainerAtIndex:(NSUInteger)index {
+    KYExpressionViewContainer *view = [self.modelArray[index] container];
+    if (view == self.currentDisplayExpressionViewContainer) return;
+    
+    self.currentDisplayExpressionViewContainer.hidden = YES;
+    self.currentDisplayExpressionViewContainer = view;
+    self.currentDisplayExpressionViewContainer.hidden = NO;
+}
 
 - (void)removeContainerAtIndex:(NSUInteger)index {
     NSDictionary *config = self.modelArray[index];
@@ -202,7 +218,6 @@
 - (void)configExpressionContainerViewForIndex:(NSUInteger)index{
     if (index >= self.modelArray.count) return;
     
-//    NSMutableDictionary *config = self.modelArray[index];
     KYExpressionViewContainerModel *model = self.modelArray[index];
     
     KYExpressionViewContainer *view = model.container;
@@ -217,10 +232,6 @@
     
     KYUIntegerOrientation numberOfColumn = model.column;
     
-    if (self.currentDisplayExpressionViewContainer == view&&self.currentDisplayExpressionViewContainer) {
-        return;
-    }
-    
     if (!view) {
         
         
@@ -234,7 +245,7 @@
         
         container.backgroundColor = self.expressionContainerColor;
         
-        [container setItems:items];
+        [container setItems:[self configItemsIfEmoji:items row:KYUIntegerForCurrentOrientation(numberOfRow) column:KYUIntegerForCurrentOrientation(numberOfColumn)]];
         container.inputView = self;
         
         [self.containerView addSubview:container];
@@ -250,17 +261,17 @@
         
         model.container = container;
     }
-    else if ([view isKindOfClass:[KYExpressionViewContainer class]]) {
+    else {
         KYExpressionContainerLayout *layout = [view layout];
         layout.itemSize = itemSize;
         layout.itemSpacing = itemSpacing;
         layout.numberOfColumn = numberOfColumn;
         layout.numberOfRow = numberOfRow;
+        
+        if ([items.firstObject dataType] == kExpressionDataTypeEmoji) {
+            view.items = [self configItemsIfEmoji:items row:KYUIntegerForCurrentOrientation(numberOfRow) column:KYUIntegerForCurrentOrientation(numberOfColumn)];
+        }
     }
-    
-    self.currentDisplayExpressionViewContainer.hidden = YES;
-    self.currentDisplayExpressionViewContainer = view;
-    self.currentDisplayExpressionViewContainer.hidden = NO;
 }
 
 - (NSArray *)configItemsIfEmoji:(NSArray *)items row:(NSUInteger)row column:(NSUInteger)column {
@@ -357,6 +368,20 @@
             } completion:nil];
         }
     }
+}
+
+
+#pragma mark Notification 
+- (void)registObserver {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)removeObserver {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)orientationDidChange:(NSNotification *)noti {
+    [self configExpressionContainerViewForIndex:_toolbar.selectedIndex];
 }
 
 @end
