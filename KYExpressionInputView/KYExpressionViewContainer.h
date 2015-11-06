@@ -18,20 +18,11 @@
 
 typedef void (^KYExpressionTapBlock) (id<KYExpressionData>expression);
 
-typedef NS_ENUM(NSUInteger, KYExpressionViewContainerType) {
-    kExpressionViewContainerTypeNone,
-    kExpressionViewContainerTypeEmoji,
-    kExpressionViewContainerTypeCustom,
-    kExpressionViewContainerTypePackage,
-};
-
 @interface KYExpressionViewContainer : UIView
 
 @property (nonatomic, copy) KYExpressionTapBlock block;
 
 @property (nonatomic, weak) KYExpressionInputView *inputView;
-
-@property (nonatomic, assign) KYExpressionViewContainerType containerType;
 
 
 + (instancetype)containerWithLayout:(KYExpressionContainerLayout *)layout items:(NSArray <id<KYExpressionData>>*)items;
