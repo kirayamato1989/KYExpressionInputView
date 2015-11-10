@@ -15,7 +15,7 @@ struct KYUIntegerOrientation {
 
 typedef struct KYUIntegerOrientation KYUIntegerOrientation;
 
-KYUIntegerOrientation KYUIntegerOrientationMake(NSUInteger, NSUInteger);
+KYUIntegerOrientation KYUIntegerOrientationMake(NSUInteger uintegerForPortrait, NSUInteger uintegerForLandscape);
 
 NSUInteger KYUIntegerForCurrentOrientation(KYUIntegerOrientation);
 
@@ -30,7 +30,9 @@ struct KYSizeOrientation {
 
 typedef struct KYSizeOrientation KYSizeOrientation;
 
-KYSizeOrientation KYSizeOrientationMake(CGSize, CGSize);
+KYSizeOrientation KYSizeOrientationMake(CGSize sizeForPortrait, CGSize sizeForLandscape);
+
+KYSizeOrientation KYSizeOrientationMakeWithFloat(CGFloat portraitWidth,CGFloat portraitHeight,CGFloat landscapeWith,CGFloat landscapeHeight);
 
 CGSize KYSizeForCurrentOrientation(KYSizeOrientation);
 
@@ -44,7 +46,7 @@ struct KYFloatOrientation {
 };
 typedef struct KYFloatOrientation KYFloatOrientation;
 
-KYFloatOrientation KYFloatOrientationMake(CGFloat, CGFloat);
+KYFloatOrientation KYFloatOrientationMake(CGFloat floatForPortrait, CGFloat floatForLandscape);
 
 CGFloat KYFloatForCurrentOrientation(KYFloatOrientation);
 

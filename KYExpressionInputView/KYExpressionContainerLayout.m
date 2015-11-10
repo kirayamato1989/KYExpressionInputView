@@ -44,6 +44,16 @@ inline KYSizeOrientation KYSizeOrientationMake (CGSize portrait, CGSize landscap
     return size;
 }
 
+inline KYSizeOrientation KYSizeOrientationMakeWithFloat (CGFloat pw, CGFloat ph, CGFloat lw, CGFloat lh) {
+    KYSizeOrientation size;
+    CGSize portraitSize = CGSizeMake(pw, ph);
+    CGSize landscapeSize = CGSizeMake(lw, lh);
+    size.sizeForOrientationPortrait = portraitSize;
+    size.sizeForOrientationLandscape = landscapeSize;
+    return size;
+}
+
+
 inline CGSize KYSizeForCurrentOrientation (KYSizeOrientation value) {
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
     if (UIDeviceOrientationIsPortrait(orientation)||orientation == UIDeviceOrientationUnknown) {
