@@ -58,8 +58,6 @@
         
         _imageView.hidden = YES;
         _imageView.image = nil;
-        _imageView.animationImages = nil;
-        [_imageView stopAnimating];
         
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         
@@ -77,17 +75,10 @@
                 _textLabel.text = [expressionItem text];
                 break;
             case kExpressionDataTypeImage:
-                [self showBorder:YES];
-                _imageView.hidden = NO;
-                _imageView.image = [expressionItem image];
-                break;
             case kExpressionDataTypeGif:
                 [self showBorder:YES];
                 _imageView.hidden = NO;
                 _imageView.image = [expressionItem image];
-                _imageView.animationImages = [expressionItem image].images;
-                _imageView.animationDuration = [[expressionItem image] duration];
-                [_imageView startAnimating];
                 break;
             case kExpressionDataTypeDelete:
                 [self showBorder:NO];
