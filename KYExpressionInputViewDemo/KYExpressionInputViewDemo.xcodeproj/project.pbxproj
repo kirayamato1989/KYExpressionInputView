@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F189FFD1BE912F90086EE73 /* QQ20151104-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F189FFC1BE912F90086EE73 /* QQ20151104-0@2x.png */; };
-		4F189FFF1BE913040086EE73 /* QQ20151104-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F189FFE1BE913040086EE73 /* QQ20151104-1@2x.png */; };
-		4F18A0011BE9132E0086EE73 /* QQ20151104-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F18A0001BE9132E0086EE73 /* QQ20151104-2@2x.png */; };
+		D6D19BAA1BFF11B900B35BE8 /* QQ20151120-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D19BA81BFF11B900B35BE8 /* QQ20151120-1@2x.png */; };
+		D6D19BAB1BFF11B900B35BE8 /* QQ20151120-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D19BA91BFF11B900B35BE8 /* QQ20151120-0@2x.png */; };
 		D6EE8A0B1BE894F700855E29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A0A1BE894F700855E29 /* main.m */; };
 		D6EE8A0E1BE894F700855E29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A0D1BE894F700855E29 /* AppDelegate.m */; };
 		D6EE8A111BE894F700855E29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A101BE894F700855E29 /* ViewController.m */; };
@@ -32,9 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4F189FFC1BE912F90086EE73 /* QQ20151104-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ20151104-0@2x.png"; sourceTree = "<group>"; };
-		4F189FFE1BE913040086EE73 /* QQ20151104-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ20151104-1@2x.png"; sourceTree = "<group>"; };
-		4F18A0001BE9132E0086EE73 /* QQ20151104-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ20151104-2@2x.png"; sourceTree = "<group>"; };
+		D6D19BA81BFF11B900B35BE8 /* QQ20151120-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ20151120-1@2x.png"; sourceTree = "<group>"; };
+		D6D19BA91BFF11B900B35BE8 /* QQ20151120-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ20151120-0@2x.png"; sourceTree = "<group>"; };
 		D6EE8A061BE894F700855E29 /* KYExpressionInputViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYExpressionInputViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EE8A0A1BE894F700855E29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6EE8A0C1BE894F700855E29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,9 +109,8 @@
 				D6EE8A0D1BE894F700855E29 /* AppDelegate.m */,
 				D6EE8A0F1BE894F700855E29 /* ViewController.h */,
 				D6EE8A101BE894F700855E29 /* ViewController.m */,
-				4F18A0001BE9132E0086EE73 /* QQ20151104-2@2x.png */,
-				4F189FFE1BE913040086EE73 /* QQ20151104-1@2x.png */,
-				4F189FFC1BE912F90086EE73 /* QQ20151104-0@2x.png */,
+				D6D19BA81BFF11B900B35BE8 /* QQ20151120-1@2x.png */,
+				D6D19BA91BFF11B900B35BE8 /* QQ20151120-0@2x.png */,
 				D6EE8A121BE894F700855E29 /* Main.storyboard */,
 				D6EE8A151BE894F700855E29 /* Assets.xcassets */,
 				D6EE8A171BE894F700855E29 /* LaunchScreen.storyboard */,
@@ -227,11 +224,10 @@
 			files = (
 				D6EE8A191BE894F700855E29 /* LaunchScreen.storyboard in Resources */,
 				D6EE8A161BE894F700855E29 /* Assets.xcassets in Resources */,
-				4F189FFF1BE913040086EE73 /* QQ20151104-1@2x.png in Resources */,
+				D6D19BAA1BFF11B900B35BE8 /* QQ20151120-1@2x.png in Resources */,
 				D6EE8A141BE894F700855E29 /* Main.storyboard in Resources */,
-				4F189FFD1BE912F90086EE73 /* QQ20151104-0@2x.png in Resources */,
-				4F18A0011BE9132E0086EE73 /* QQ20151104-2@2x.png in Resources */,
 				D6EE8AF51BE8B8C500855E29 /* KYExpressionBundle.bundle in Resources */,
+				D6D19BAB1BFF11B900B35BE8 /* QQ20151120-0@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
