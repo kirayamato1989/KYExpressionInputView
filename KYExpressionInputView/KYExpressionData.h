@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, KYExpressionDataType) {
     kExpressionDataTypeGif,    //gif动图
 };
 
-@protocol KYExpressionData <NSObject>
+@protocol KYExpressionData <NSObject, NSCoding>
 
 - (KYExpressionDataType)dataType;
 
@@ -25,8 +25,6 @@ typedef NS_ENUM(NSUInteger, KYExpressionDataType) {
 - (UIImage *)image;
 
 - (NSData *)imageData;
-
-- (NSString *)storeKey;
 
 - (NSString *)code;
 
