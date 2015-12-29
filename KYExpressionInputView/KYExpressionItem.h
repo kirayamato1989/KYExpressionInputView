@@ -16,13 +16,13 @@
 // inital method
 + (instancetype)itemWithImage:(UIImage *)image url:(NSString *)url;
 
-+ (instancetype)itemWithData:(NSData *)data url:(NSString *)url;
++ (instancetype)itemWithImageData:(NSData *)data url:(NSString *)url;
 
 + (instancetype)itemWithEmoji:(NSString *)emoji;
 
 + (instancetype)deleteItem;
 
-- (instancetype)initWithData:(NSData *)data url:(NSString *)url;
+- (instancetype)initWithImageData:(NSData *)data url:(NSString *)url;
 
 - (instancetype)initWithImage:(UIImage *)image url:(NSString *)url;
 
