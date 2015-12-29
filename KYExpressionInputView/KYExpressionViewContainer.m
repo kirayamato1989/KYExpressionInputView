@@ -173,7 +173,7 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     id<KYExpressionData> item = self.dataArray[indexPath.row];
     if (self.block) {
-        self.block(item);
+        self.block(item, indexPath.row, self);
     }
 }
 

@@ -14,9 +14,9 @@
 #import "KYExpressionData.h"
 #import "KYExpressionContainerLayout.h"
 
-@class KYExpressionInputView;
+@class KYExpressionInputView,KYExpressionViewContainer;
 
-typedef void (^KYExpressionTapBlock) (id<KYExpressionData>expression);
+typedef void (^KYExpressionTapBlock) (id<KYExpressionData>expression, NSUInteger index, KYExpressionViewContainer *container);
 
 @interface KYExpressionViewContainer : UIView
 

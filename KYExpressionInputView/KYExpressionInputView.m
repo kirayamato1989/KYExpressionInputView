@@ -283,9 +283,9 @@
         [self.containerView addSubview:container];
         
         __weak typeof(self) weakSelf = self;
-        container.block = ^ (id<KYExpressionData> item) {
-            if ([weakSelf.delegate respondsToSelector:@selector(inputView:didSelectExpression:)]) {
-                [weakSelf.delegate inputView:weakSelf didSelectExpression:item];
+        container.block = ^ (id<KYExpressionData> item, NSUInteger index, KYExpressionViewContainer *container) {
+            if ([weakSelf.delegate respondsToSelector:@selector(inputView:didSelectExpression:atIndex:container:)]) {
+                [weakSelf.delegate inputView:weakSelf didSelectExpression:item atIndex:index container:container];
             }
         };
         

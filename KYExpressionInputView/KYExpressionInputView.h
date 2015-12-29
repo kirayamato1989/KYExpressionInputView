@@ -17,9 +17,9 @@
 
 @protocol KYExpressionInputViewDelegate <NSObject>
 @optional
-- (void) inputView:(KYExpressionInputView *)inputView didSelectExpression:(id<KYExpressionData>)expression;
+- (void)inputView:(KYExpressionInputView *)inputView didSelectExpression:(id<KYExpressionData>)expression atIndex:(NSUInteger)index container:(KYExpressionViewContainer *)container;
 
-- (void) inputView:(KYExpressionInputView *)inputView didClickSendButton:(UIButton *)button;
+- (void)inputView:(KYExpressionInputView *)inputView didClickSendButton:(UIButton *)button;
 
 @end
 
