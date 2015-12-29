@@ -71,6 +71,11 @@ static KYExpressionStore *_defaultStore;
     // clean disk
     NSString *cachePath = [self cachePathForPackageIdentifier:identifier];
     [[NSFileManager defaultManager] removeItemAtPath:cachePath error:nil];
+    
+    dispatch_async(self.saveQueue, ^{
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.identifiers];
+        [[NSFileManager defaultManager] createFileAtPath:[self cachePlistPath] contents:data attributes:nil];
+    });
 }
 
 #pragma mark private method
