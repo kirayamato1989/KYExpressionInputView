@@ -12,6 +12,7 @@
 #import "KYExpressionContainerLayout.h"
 #import "KYExpressionStore.h"
 #import "KYExpressionConstant.h"
+#import "KYExpressionPackage.h"
 
 //Catagory
 #import "UIImage+KYGif.h"

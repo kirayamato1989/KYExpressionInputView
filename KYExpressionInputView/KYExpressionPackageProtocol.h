@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "KYExpressionData.h"
 
-@protocol KYExpressionPackageProtocol <NSObject>
+@protocol KYExpressionPackageProtocol <NSObject, NSCoding>
 
 - (NSUInteger)numberOfItems;
 
@@ -17,7 +17,18 @@
 
 - (NSArray<id<KYExpressionData>> *)items;
 
+/**
+ *  标示必须唯一
+ */
 - (NSString *)identifier;
+
+@optional
+
+- (void)addItem:(id<KYExpressionData>)item;
+
+- (void)insertItem:(id<KYExpressionData>)item AtIndex:(NSUInteger)index;
+
+- (void)deleteItemAtIndex:(NSUInteger)index;
 
 @end
 

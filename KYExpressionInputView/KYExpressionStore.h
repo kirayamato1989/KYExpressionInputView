@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "KYExpressionPackageProtocol.h"
+
 @interface KYExpressionStore : NSObject
 
 + (instancetype)defaultStore;
+
+- (id<KYExpressionPackageProtocol>)packageForIdentifier:(NSString *)identifier;
+
+- (void)savePackage:(id<KYExpressionPackageProtocol>)package;
+
+- (void)removePackageByIdentifier:(NSString *)identifier;
 
 @end
