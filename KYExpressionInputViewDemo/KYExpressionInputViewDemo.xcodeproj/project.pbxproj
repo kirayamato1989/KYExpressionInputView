@@ -25,10 +25,10 @@
 		D6EE8AFC1BE8B8C500855E29 /* NSData+KYImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AEA1BE8B8C500855E29 /* NSData+KYImageContentType.m */; };
 		D6EE8AFD1BE8B8C500855E29 /* UIImage+KYGif.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AEC1BE8B8C500855E29 /* UIImage+KYGif.m */; };
 		D6EE8AFE1BE8B8C500855E29 /* UIImage+KYMultiFormate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AEE1BE8B8C500855E29 /* UIImage+KYMultiFormate.m */; };
-		D6EE8AFF1BE8B8C500855E29 /* UIImage+Mask.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AF01BE8B8C500855E29 /* UIImage+Mask.m */; };
-		D6EE8B001BE8B8C500855E29 /* UIView+FrameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AF21BE8B8C500855E29 /* UIView+FrameAdjust.m */; };
-		D6EE8B011BE8B8C500855E29 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AF41BE8B8C500855E29 /* UIView+Shadow.m */; };
-		D6F9B2BB1C326141006CAF83 /* UIImage+NSData.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9B2BA1C326141006CAF83 /* UIImage+NSData.m */; };
+		D6EE8AFF1BE8B8C500855E29 /* UIImage+KYMask.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AF01BE8B8C500855E29 /* UIImage+KYMask.m */; };
+		D6EE8B001BE8B8C500855E29 /* UIView+KYFrameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AF21BE8B8C500855E29 /* UIView+KYFrameAdjust.m */; };
+		D6EE8B011BE8B8C500855E29 /* UIView+KYShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8AF41BE8B8C500855E29 /* UIView+KYShadow.m */; };
+		D6F9B2BB1C326141006CAF83 /* UIImage+KYNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9B2BA1C326141006CAF83 /* UIImage+KYNSData.m */; };
 		D6F9B2BE1C326311006CAF83 /* KYExpressionPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9B2BD1C326311006CAF83 /* KYExpressionPackage.m */; };
 /* End PBXBuildFile section */
 
@@ -68,14 +68,14 @@
 		D6EE8AEC1BE8B8C500855E29 /* UIImage+KYGif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KYGif.m"; sourceTree = "<group>"; };
 		D6EE8AED1BE8B8C500855E29 /* UIImage+KYMultiFormate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KYMultiFormate.h"; sourceTree = "<group>"; };
 		D6EE8AEE1BE8B8C500855E29 /* UIImage+KYMultiFormate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KYMultiFormate.m"; sourceTree = "<group>"; };
-		D6EE8AEF1BE8B8C500855E29 /* UIImage+Mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Mask.h"; sourceTree = "<group>"; };
-		D6EE8AF01BE8B8C500855E29 /* UIImage+Mask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Mask.m"; sourceTree = "<group>"; };
-		D6EE8AF11BE8B8C500855E29 /* UIView+FrameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameAdjust.h"; sourceTree = "<group>"; };
-		D6EE8AF21BE8B8C500855E29 /* UIView+FrameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameAdjust.m"; sourceTree = "<group>"; };
-		D6EE8AF31BE8B8C500855E29 /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
-		D6EE8AF41BE8B8C500855E29 /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
-		D6F9B2B91C326141006CAF83 /* UIImage+NSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+NSData.h"; sourceTree = "<group>"; };
-		D6F9B2BA1C326141006CAF83 /* UIImage+NSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NSData.m"; sourceTree = "<group>"; };
+		D6EE8AEF1BE8B8C500855E29 /* UIImage+KYMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KYMask.h"; sourceTree = "<group>"; };
+		D6EE8AF01BE8B8C500855E29 /* UIImage+KYMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KYMask.m"; sourceTree = "<group>"; };
+		D6EE8AF11BE8B8C500855E29 /* UIView+KYFrameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KYFrameAdjust.h"; sourceTree = "<group>"; };
+		D6EE8AF21BE8B8C500855E29 /* UIView+KYFrameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KYFrameAdjust.m"; sourceTree = "<group>"; };
+		D6EE8AF31BE8B8C500855E29 /* UIView+KYShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KYShadow.h"; sourceTree = "<group>"; };
+		D6EE8AF41BE8B8C500855E29 /* UIView+KYShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KYShadow.m"; sourceTree = "<group>"; };
+		D6F9B2B91C326141006CAF83 /* UIImage+KYNSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KYNSData.h"; sourceTree = "<group>"; };
+		D6F9B2BA1C326141006CAF83 /* UIImage+KYNSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KYNSData.m"; sourceTree = "<group>"; };
 		D6F9B2BC1C326311006CAF83 /* KYExpressionPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYExpressionPackage.h; sourceTree = "<group>"; };
 		D6F9B2BD1C326311006CAF83 /* KYExpressionPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYExpressionPackage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,14 +161,14 @@
 				D6EE8AEC1BE8B8C500855E29 /* UIImage+KYGif.m */,
 				D6EE8AED1BE8B8C500855E29 /* UIImage+KYMultiFormate.h */,
 				D6EE8AEE1BE8B8C500855E29 /* UIImage+KYMultiFormate.m */,
-				D6EE8AEF1BE8B8C500855E29 /* UIImage+Mask.h */,
-				D6EE8AF01BE8B8C500855E29 /* UIImage+Mask.m */,
-				D6F9B2B91C326141006CAF83 /* UIImage+NSData.h */,
-				D6F9B2BA1C326141006CAF83 /* UIImage+NSData.m */,
-				D6EE8AF11BE8B8C500855E29 /* UIView+FrameAdjust.h */,
-				D6EE8AF21BE8B8C500855E29 /* UIView+FrameAdjust.m */,
-				D6EE8AF31BE8B8C500855E29 /* UIView+Shadow.h */,
-				D6EE8AF41BE8B8C500855E29 /* UIView+Shadow.m */,
+				D6EE8AEF1BE8B8C500855E29 /* UIImage+KYMask.h */,
+				D6EE8AF01BE8B8C500855E29 /* UIImage+KYMask.m */,
+				D6F9B2B91C326141006CAF83 /* UIImage+KYNSData.h */,
+				D6F9B2BA1C326141006CAF83 /* UIImage+KYNSData.m */,
+				D6EE8AF11BE8B8C500855E29 /* UIView+KYFrameAdjust.h */,
+				D6EE8AF21BE8B8C500855E29 /* UIView+KYFrameAdjust.m */,
+				D6EE8AF31BE8B8C500855E29 /* UIView+KYShadow.h */,
+				D6EE8AF41BE8B8C500855E29 /* UIView+KYShadow.m */,
 				D6EE8AD91BE8B8C500855E29 /* KYExpressionBundle.bundle */,
 			);
 			name = KYExpressionInputView;
@@ -248,16 +248,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6EE8AFF1BE8B8C500855E29 /* UIImage+Mask.m in Sources */,
+				D6EE8AFF1BE8B8C500855E29 /* UIImage+KYMask.m in Sources */,
 				D6EE8AFC1BE8B8C500855E29 /* NSData+KYImageContentType.m in Sources */,
-				D6F9B2BB1C326141006CAF83 /* UIImage+NSData.m in Sources */,
-				D6EE8B011BE8B8C500855E29 /* UIView+Shadow.m in Sources */,
+				D6F9B2BB1C326141006CAF83 /* UIImage+KYNSData.m in Sources */,
+				D6EE8B011BE8B8C500855E29 /* UIView+KYShadow.m in Sources */,
 				D6EE8AF81BE8B8C500855E29 /* KYExpressionItem.m in Sources */,
 				D6EE8AF91BE8B8C500855E29 /* KYExpressionStore.m in Sources */,
 				D6EE8A111BE894F700855E29 /* ViewController.m in Sources */,
 				D6EE8AF61BE8B8C500855E29 /* KYExpressionContainerLayout.m in Sources */,
 				D6EE8AFB1BE8B8C500855E29 /* KYExpressionViewContainer.m in Sources */,
-				D6EE8B001BE8B8C500855E29 /* UIView+FrameAdjust.m in Sources */,
+				D6EE8B001BE8B8C500855E29 /* UIView+KYFrameAdjust.m in Sources */,
 				D6EE8A0E1BE894F700855E29 /* AppDelegate.m in Sources */,
 				D6EE8A0B1BE894F700855E29 /* main.m in Sources */,
 				D6EE8AFE1BE8B8C500855E29 /* UIImage+KYMultiFormate.m in Sources */,
