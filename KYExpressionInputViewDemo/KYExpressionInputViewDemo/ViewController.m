@@ -25,14 +25,7 @@
     
     inputView.toolbarColor = [UIColor whiteColor];
     
-    NSMutableArray *items = [NSMutableArray array];
-    for (int i = 0; i < 100; i++) {
-        NSString *path = [kExpressionBundle pathForResource:[NSString stringWithFormat:@"%i",arc4random_uniform(5)+1] ofType:nil];
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        KYExpressionItem *item = [KYExpressionItem itemWithImageData:data url:nil];
-        [items addObject:item];
-    }
-    NSString *emojiPath = [kExpressionBundle pathForResource:@"ISEmojiList" ofType:@"plist"];
+    NSString *emojiPath = [[NSBundle mainBundle] pathForResource:@"ISEmojiList" ofType:@"plist"];
     NSArray *array = [NSArray arrayWithContentsOfFile:emojiPath];
     NSMutableArray *emojiItems = [NSMutableArray array];
     for (NSString *text in array) {
@@ -45,18 +38,18 @@
     
     
     
-    NSString *iconPath = [kExpressionBundle pathForResource:@"icon" ofType:@"jpg"];
+//    NSString *iconPath = [kExpressionBundle pathForResource:@"icon" ofType:@"jpg"];
     
-    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:KYUIntegerOrientationMake(2, 2) column:KYUIntegerOrientationMake(4, 6) itemSize:KYSizeOrientationMake(CGSizeMake(66, 80), CGSizeMake(56, 56)) itemSpacing:KYFloatOrientationMake(20, 20) textPercent:0.15 backgroundColor:[UIColor whiteColor] borderWidth:0];
+//    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:KYUIntegerOrientationMake(2, 2) column:KYUIntegerOrientationMake(4, 6) itemSize:KYSizeOrientationMake(CGSizeMake(66, 80), CGSizeMake(56, 56)) itemSpacing:KYFloatOrientationMake(20, 20) textPercent:0.15 backgroundColor:[UIColor whiteColor] borderWidth:0];
     
     // add by a KYExpressionViewContainer
-    KYExpressionContainerLayout *layout = [[KYExpressionContainerLayout alloc] init];
-    layout.itemSize = KYSizeOrientationMake(CGSizeMake(50, 50), CGSizeMake(40, 40));
-    layout.itemSpacing = KYFloatOrientationMake(20, 10);
-    layout.numberOfRow = KYUIntegerOrientationMake(3, 6);
-    
-    KYExpressionViewContainer *container = [KYExpressionViewContainer containerWithLayout:layout items:items];
-    [inputView addToolbarItemWithImage:nil title:@"hah" container:container];
+//    KYExpressionContainerLayout *layout = [[KYExpressionContainerLayout alloc] init];
+//    layout.itemSize = KYSizeOrientationMake(CGSizeMake(50, 50), CGSizeMake(40, 40));
+//    layout.itemSpacing = KYFloatOrientationMake(20, 10);
+//    layout.numberOfRow = KYUIntegerOrientationMake(3, 6);
+//    
+//    KYExpressionViewContainer *container = [KYExpressionViewContainer containerWithLayout:layout items:items];
+//    [inputView addToolbarItemWithImage:nil title:@"hah" container:container];
     
     
     inputView.delegate = self;

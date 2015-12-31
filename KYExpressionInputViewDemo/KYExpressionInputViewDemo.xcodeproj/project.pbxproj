@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D680DBBA1C3513410049A055 /* ISEmojiList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D680DBB91C3513410049A055 /* ISEmojiList.plist */; };
 		D6D19BAA1BFF11B900B35BE8 /* QQ20151120-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D19BA81BFF11B900B35BE8 /* QQ20151120-1@2x.png */; };
 		D6D19BAB1BFF11B900B35BE8 /* QQ20151120-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D19BA91BFF11B900B35BE8 /* QQ20151120-0@2x.png */; };
 		D6EE8A0B1BE894F700855E29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8A0A1BE894F700855E29 /* main.m */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D680DBB91C3513410049A055 /* ISEmojiList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ISEmojiList.plist; path = KYExpressionInputViewDemo/ISEmojiList.plist; sourceTree = SOURCE_ROOT; };
 		D6D19BA81BFF11B900B35BE8 /* QQ20151120-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ20151120-1@2x.png"; sourceTree = "<group>"; };
 		D6D19BA91BFF11B900B35BE8 /* QQ20151120-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ20151120-0@2x.png"; sourceTree = "<group>"; };
 		D6EE8A061BE894F700855E29 /* KYExpressionInputViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYExpressionInputViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D680DBC01C35135F0049A055 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D680DBB91C3513410049A055 /* ISEmojiList.plist */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
 		D6EE89FD1BE894F700855E29 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +120,7 @@
 		D6EE8A081BE894F700855E29 /* KYExpressionInputViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D680DBC01C35135F0049A055 /* Source */,
 				D6EE8AD71BE8B8C500855E29 /* KYExpressionInputView */,
 				D6EE8A0C1BE894F700855E29 /* AppDelegate.h */,
 				D6EE8A0D1BE894F700855E29 /* AppDelegate.m */,
@@ -237,6 +248,7 @@
 				D6D19BAA1BFF11B900B35BE8 /* QQ20151120-1@2x.png in Resources */,
 				D6EE8A141BE894F700855E29 /* Main.storyboard in Resources */,
 				D6EE8AF51BE8B8C500855E29 /* KYExpressionBundle.bundle in Resources */,
+				D680DBBA1C3513410049A055 /* ISEmojiList.plist in Resources */,
 				D6D19BAB1BFF11B900B35BE8 /* QQ20151120-0@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
