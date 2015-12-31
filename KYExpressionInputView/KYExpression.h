@@ -18,5 +18,5 @@
 #import "UIImage+KYGif.h"
 #import "UIImage+KYMultiFormate.h"
 #import "NSData+KYImageContentType.h"
-#import "UIView+FrameAdjust.h"
-#import "UIView+Shadow.h"
+#import "UIView+KYFrameAdjust.h"
+#import "UIView+KYShadow.h"
