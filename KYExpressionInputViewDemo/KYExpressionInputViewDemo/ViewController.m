@@ -29,7 +29,7 @@
     for (int i = 0; i < 100; i++) {
         NSString *path = [kExpressionBundle pathForResource:[NSString stringWithFormat:@"%i",arc4random_uniform(5)+1] ofType:nil];
         NSData *data = [NSData dataWithContentsOfFile:path];
-        KYExpressionItem *item = [KYExpressionItem itemWithData:data url:nil];
+        KYExpressionItem *item = [KYExpressionItem itemWithImageData:data url:nil];
         [items addObject:item];
     }
     NSString *emojiPath = [kExpressionBundle pathForResource:@"ISEmojiList" ofType:@"plist"];
@@ -40,17 +40,14 @@
         [emojiItems addObject:item];
     }
     
-    [inputView setToolbarSendButtonHidden:YES animated:NO];
     
-    
-    
-    [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:KYUIntegerOrientationMake(4, 5) column:KYUIntegerOrientationMake(8, 14) itemSize:KYSizeOrientationMake(CGSizeMake(36, 36), CGSizeMake(36, 36)) itemSpacing:KYFloatOrientationMake(6, 8)];
+    [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:KYUIntegerOrientationMake(4, 5) column:KYUIntegerOrientationMake(8, 14) itemSize:KYSizeOrientationMake(CGSizeMake(36, 36), CGSizeMake(36, 36)) itemSpacing:KYFloatOrientationMake(6, 8) textPercent:1 backgroundColor:[UIColor clearColor] borderWidth:0];
     
     
     
     NSString *iconPath = [kExpressionBundle pathForResource:@"icon" ofType:@"jpg"];
     
-    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:KYUIntegerOrientationMake(2, 3) column:KYUIntegerOrientationMake(6, 10) itemSize:KYSizeOrientationMake(CGSizeMake(50, 50), CGSizeMake(44, 44)) itemSpacing:KYFloatOrientationMake(15, 15)];
+    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:KYUIntegerOrientationMake(2, 2) column:KYUIntegerOrientationMake(4, 6) itemSize:KYSizeOrientationMake(CGSizeMake(66, 80), CGSizeMake(56, 56)) itemSpacing:KYFloatOrientationMake(20, 20) textPercent:0.15 backgroundColor:[UIColor whiteColor] borderWidth:0];
     
     // add by a KYExpressionViewContainer
     KYExpressionContainerLayout *layout = [[KYExpressionContainerLayout alloc] init];
@@ -64,12 +61,13 @@
     
     inputView.delegate = self;
     
+    
+    [inputView setToolbarSendButtonHidden:NO animated:NO];
     self.textField.inputView = inputView;
 }
 
-
-- (void)inputView:(KYExpressionInputView *)inputView didSelectExpression:(id<KYExpressionData>)expression {
-    NSLog(@"%@",[expression image]);
+- (void)inputView:(KYExpressionInputView *)inputView didSelectExpression:(id<KYExpressionData>)expression atIndex:(NSUInteger)index container:(KYExpressionViewContainer *)container {
+    
 }
 
 - (void)didReceiveMemoryWarning {
