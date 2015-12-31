@@ -9,7 +9,7 @@
 #import "KYExpressionItem.h"
 #import "UIImage+KYMultiFormate.h"
 #import "NSData+KYImageContentType.h"
-#import "UIImage+NSData.h"
+#import "UIImage+KYNSData.h"
 #import "KYExpressionConstant.h"
 
 
