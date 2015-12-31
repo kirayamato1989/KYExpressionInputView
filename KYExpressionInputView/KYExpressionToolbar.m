@@ -7,10 +7,10 @@
 //
 
 #import "KYExpressionToolbar.h"
-#import "UIView+Shadow.h"
+#import "UIView+KYShadow.h"
 #import "KYExpressionConstant.h"
-#import "UIView+FrameAdjust.h"
-#import "UIImage+Mask.h"
+#import "UIView+KYFrameAdjust.h"
+#import "UIImage+KYMask.h"
 
 @interface KYExpressionToolbarItem : UIButton
 
@@ -39,10 +39,8 @@
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
         if (image) {
+            self.imageView.contentMode = UIViewContentModeScaleAspectFit;
             [self setImage:image forState:UIControlStateNormal];
-            UIImage *seletedImage = [UIImage ky_maskImage:image color:UIColorFromRGBA(0x999999, 0.6)];
-            [self setImage:seletedImage forState:UIControlStateSelected
-             ];
         }
         if (title) {
             [self setTitle:title forState:UIControlStateNormal];
