@@ -40,8 +40,16 @@ typedef void (^KYExpressionTapBlock) (id<KYExpressionData>expression, NSUInteger
  */
 - (void)addExpressionItem:(id<KYExpressionData>)item;
 
-
+/**
+ *  获取表情布局layout
+ */
 - (KYExpressionContainerLayout *)layout;
+
+
+/**
+ *  用新的layout去更新当前的layout
+ */
+- (void)updateLayoutByLayout:(KYExpressionContainerLayout *)newLayout;
 
 
 @end

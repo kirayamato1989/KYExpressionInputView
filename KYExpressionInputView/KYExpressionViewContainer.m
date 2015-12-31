@@ -13,13 +13,15 @@
 #import "KYExpressionConstant.h"
 
 @interface KYExpressionCollectionViewCell : UICollectionViewCell
-{
-    UIImageView *_imageView;
-    UILabel *_textLabel;
-}
 
+
+@property (nonatomic, strong) UIImageView *imageView;
+
+@property (nonatomic, strong) UILabel *textLabel;
 
 @property (nonatomic, strong) id<KYExpressionData> expressionItem;
+
+@property (nonatomic, weak) KYExpressionContainerLayout *layout;
 
 @end
 
@@ -33,17 +35,15 @@
         
         //
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
-        _imageView.contentMode = UIViewContentModeScaleAspectFill;
-        _imageView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
         
         self.backgroundColor = [UIColor clearColor];
         [self addSubview:_imageView];
         
         //
         _textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-        _textLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
         
-        _textLabel.textColor = [UIColor blackColor];
+        _textLabel.textColor = UIColorFromRGB(0x333333);
         
         _textLabel.textAlignment = NSTextAlignmentCenter;
         
@@ -52,47 +52,67 @@
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.layer.borderWidth = self.layout.borderWidth;
+    
+    CGFloat textHeightPercent = self.layout.textHeightPercent;
+    
+    switch ([self.expressionItem dataType]) {
+        case kExpressionDataTypeEmoji:
+            // adjust font to the cell bounds
+            _textLabel.font = [UIFont systemFontOfSize:MIN(self.bounds.size.width, self.bounds.size.height)/2];
+            
+            textHeightPercent = 1;
+            
+            break;
+        case kExpressionDataTypeImage:
+        case kExpressionDataTypeGif:
+            self.textLabel.font = [UIFont systemFontOfSize:self.bounds.size.height * textHeightPercent];
+            break;
+        case kExpressionDataTypeDelete:
+            textHeightPercent = 0;
+            break;
+        default:
+            break;
+    }
+    
+    CGFloat textHeight = self.bounds.size.height * textHeightPercent;
+    
+    CGFloat imageViewHeight = self.bounds.size.height * (1 - textHeightPercent);
+    
+    _imageView.frame = CGRectMake(0, 0, self.bounds.size.width, imageViewHeight);
+    
+    _textLabel.frame = CGRectMake(0, CGRectGetMaxY(_imageView.frame), self.bounds.size.width, textHeight);
+}
+
 - (void)setExpressionItem:(id<KYExpressionData>)expressionItem {
     if (_expressionItem != expressionItem) {
         _expressionItem = expressionItem;
         
-        _imageView.hidden = YES;
         _imageView.image = nil;
         
-        _imageView.contentMode = UIViewContentModeScaleAspectFill;
-        
-        _textLabel.hidden = YES;
         _textLabel.text = nil;
         
         switch ([expressionItem dataType]) {
             case kExpressionDataTypeEmoji:
-                [self showBorder:NO];
-                _textLabel.hidden = NO;
-                
-                // adjust font to the cell bounds
-                _textLabel.font = [UIFont systemFontOfSize:MIN(self.bounds.size.width, self.bounds.size.height)/2];
-                
                 _textLabel.text = [expressionItem text];
                 break;
             case kExpressionDataTypeImage:
             case kExpressionDataTypeGif:
-                [self showBorder:YES];
-                _imageView.hidden = NO;
                 _imageView.image = [expressionItem image];
+                _textLabel.text = [expressionItem text];
+                _textLabel.text = @"打我啊";
                 break;
             case kExpressionDataTypeDelete:
-                [self showBorder:NO];
-                _imageView.hidden = NO;
-                _imageView.contentMode = UIViewContentModeScaleAspectFit;
                 _imageView.image = [expressionItem image];
             default:
                 break;
         }
+        
+        [self setNeedsLayout];
     }
-}
-
-- (void)showBorder:(BOOL)b {
-    self.layer.borderWidth = b?.5f:0.f;
 }
 
 @end
@@ -162,6 +182,10 @@
 {
     KYExpressionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
+    if (!cell.layout) {
+        cell.layout = self.layout;
+    }
+    
     id<KYExpressionData> data = self.dataArray[indexPath.row];
     
     cell.expressionItem = data;
@@ -192,8 +216,6 @@
 
 - (void)initUI {
     // self
-    self.backgroundColor = self.inputView.expressionContainerColor;
-    
     KYExpressionContainerLayout *layout = [[KYExpressionContainerLayout alloc] init];
     
     _layout = layout;
@@ -211,7 +233,7 @@
     self.expressionCollectionView.dataSource = self;
     self.expressionCollectionView.delegate = self;
     
-    self.expressionCollectionView.backgroundColor = self.inputView.expressionContainerColor;
+    self.expressionCollectionView.backgroundColor = [UIColor clearColor];
     
     [self.expressionCollectionView registerClass:[KYExpressionCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
@@ -222,8 +244,8 @@
     self.pageControl.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
     
     self.pageControl.numberOfPages = KYUIntegerForCurrentOrientation(self.layout.numberOfPage);
-    self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    self.pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    self.pageControl.pageIndicatorTintColor = [UIColor grayColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor lightGrayColor];
     self.pageControl.currentPage = 0;
     [self.pageControl addTarget:self action:@selector(pageControlDidChange:) forControlEvents:UIControlEventValueChanged];
     [self addSubview:self.pageControl];
@@ -236,7 +258,13 @@
         _layout.numberOfColumn = layout.numberOfColumn;
         _layout.numberOfRow = layout.numberOfRow;
         _layout.numberOfPage = layout.numberOfPage;
+        _layout.borderWidth = layout.borderWidth;
+        _layout.textHeightPercent = layout.textHeightPercent;
     }
+}
+
+- (void)updateLayoutByLayout:(KYExpressionContainerLayout *)newLayout {
+    [self setLayout:newLayout];
 }
 
 - (NSArray<id<KYExpressionData>> *)items {
