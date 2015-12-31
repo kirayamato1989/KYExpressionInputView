@@ -30,8 +30,6 @@
 // Colors
 @property (nonatomic, strong) UIColor *toolbarColor;
 
-@property (nonatomic, strong) UIColor *expressionContainerColor;
-
 @property (nonatomic, strong) UIColor *senderButtonColor;
 
 @property (nonatomic, assign) KYFloatOrientation itemSpacing;
@@ -116,7 +114,10 @@
                              row:(KYUIntegerOrientation)row
                           column:(KYUIntegerOrientation)column
                         itemSize:(KYSizeOrientation)itemSize
-                     itemSpacing:(KYFloatOrientation)itemSpacing;
+                    itemSpacing:(KYFloatOrientation)itemSpacing
+                    textPercent:(CGFloat)percent
+                 backgroundColor:(UIColor *)color
+                     borderWidth:(CGFloat)width;
 
 
 - (void)addToolbarItemWithImage:(UIImage *)image

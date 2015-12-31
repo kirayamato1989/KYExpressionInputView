@@ -79,5 +79,16 @@ BOOL KYFloatIsEqual(KYFloatOrientation, KYFloatOrientation);
  */
 @property (nonatomic, assign) KYSizeOrientation itemSize;
 
+/**
+ *  每个表情的边框宽度
+ */
+@property (nonatomic, assign) CGFloat borderWidth;
+
+
+/**
+ *  自定义表情里面，文本内容的高度比例
+ */
+@property (nonatomic, assign) CGFloat textHeightPercent;
+
 
 @end
