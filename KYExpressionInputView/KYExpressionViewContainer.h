@@ -41,6 +41,13 @@ typedef void (^KYExpressionTapBlock) (id<KYExpressionData>expression, NSUInteger
 - (void)addExpressionItem:(id<KYExpressionData>)item;
 
 /**
+ *  删除自定义表情
+ *
+ *  @param indexSet 索引
+ */
+- (void)removeItemsAtIndexSet:(NSIndexSet *)indexSet;
+
+/**
  *  获取表情布局layout
  */
 - (KYExpressionContainerLayout *)layout;

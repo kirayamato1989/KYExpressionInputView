@@ -281,6 +281,10 @@
     [self layoutSubviews];
 }
 
+- (void)removeItemsAtIndexSet:(NSIndexSet *)indexSet {
+    [self.dataArray removeObjectsAtIndexes:indexSet];
+    [self layoutSubviews];
+}
 
 - (void)pageControlDidChange:(UIPageControl *)pageControl {
     NSUInteger currentPage = pageControl.currentPage;
