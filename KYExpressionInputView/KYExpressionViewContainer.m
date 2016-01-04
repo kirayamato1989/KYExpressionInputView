@@ -101,11 +101,12 @@
                 break;
             case kExpressionDataTypeImage:
             case kExpressionDataTypeGif:
+                _imageView.contentMode = UIViewContentModeScaleAspectFit;
                 _imageView.image = [expressionItem image];
                 _textLabel.text = [expressionItem text];
-                _textLabel.text = @"打我啊";
                 break;
             case kExpressionDataTypeDelete:
+                _imageView.contentMode = UIViewContentModeCenter;
                 _imageView.image = [expressionItem image];
             default:
                 break;
