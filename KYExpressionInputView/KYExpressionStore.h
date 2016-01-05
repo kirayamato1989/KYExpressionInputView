@@ -27,4 +27,9 @@
  */
 - (NSString *)cacheDirectoryPath;
 
+/**
+ *  清空缓存
+ */
+- (void)clearCache;
+
 @end

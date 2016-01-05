@@ -93,6 +93,11 @@ static KYExpressionStore *_defaultStore;
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingString:[NSString stringWithFormat:@"/KYExpressionPackages/"]];
 }
 
+- (void)clearCache {
+    [self.cache removeAllObjects];
+    self.identifiers = nil;
+}
+
 #pragma mark private method
 
 - (void)savePackage:(id<KYExpressionPackageProtocol>)package toDisk:(BOOL)saveDisk {
