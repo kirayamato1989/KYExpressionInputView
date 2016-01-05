@@ -20,4 +20,11 @@
 
 - (void)removePackageByIdentifier:(NSString *)identifier;
 
+- (NSArray<id<KYExpressionPackageProtocol>> *)allPackages;
+
+/**
+ *  表情包持久化的文件夹地址（子类可重写）
+ */
+- (NSString *)cacheDirectoryPath;
+
 @end

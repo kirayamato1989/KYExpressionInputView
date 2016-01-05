@@ -78,6 +78,21 @@ static KYExpressionStore *_defaultStore;
     });
 }
 
+- (NSArray *)allPackages {
+    NSMutableArray *packagesArray = [NSMutableArray array];
+    for (NSString *identifier in self.identifiers) {
+        id<KYExpressionPackageProtocol> package = [self packageForIdentifier:identifier];
+        if (package) {
+            [packagesArray addObject:package];
+        }
+    }
+    return [NSArray arrayWithArray:packagesArray];
+}
+
+- (NSString *)cacheDirectoryPath {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingString:[NSString stringWithFormat:@"/KYExpressionPackages/"]];
+}
+
 #pragma mark private method
 
 - (void)savePackage:(id<KYExpressionPackageProtocol>)package toDisk:(BOOL)saveDisk {
@@ -109,10 +124,6 @@ static KYExpressionStore *_defaultStore;
 
 - (NSString *)cachePathForPackageIdentifier:(NSString *)identifier {
     return [[self cacheDirectoryPath] stringByAppendingPathComponent:identifier];
-}
-
-- (NSString *)cacheDirectoryPath {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingString:[NSString stringWithFormat:@"/KYExpressionPackages/"]];
 }
 
 - (NSString *)cachePlistPath {
