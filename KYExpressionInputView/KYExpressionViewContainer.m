@@ -245,8 +245,8 @@
     self.pageControl.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
     
     self.pageControl.numberOfPages = KYUIntegerForCurrentOrientation(self.layout.numberOfPage);
-    self.pageControl.pageIndicatorTintColor = [UIColor grayColor];
-    self.pageControl.currentPageIndicatorTintColor = [UIColor lightGrayColor];
+    self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor grayColor];
     self.pageControl.currentPage = 0;
     [self.pageControl addTarget:self action:@selector(pageControlDidChange:) forControlEvents:UIControlEventValueChanged];
     [self addSubview:self.pageControl];
