@@ -16,6 +16,8 @@ typedef NS_ENUM(NSUInteger, KYExpressionDataType) {
     kExpressionDataTypeGif,    //gif动图
 };
 
+typedef void (^KY_expressionImageDownloadCompletion)(UIImage *image, NSError *error);
+
 @protocol KYExpressionData <NSObject, NSCoding>
 
 - (KYExpressionDataType)dataType;
@@ -31,5 +33,7 @@ typedef NS_ENUM(NSUInteger, KYExpressionDataType) {
 - (NSString *)text;
 
 - (NSString *)imageUrl;
+
+- (void)setImageDownloadCompletion:(KY_expressionImageDownloadCompletion)handler;
 
 @end
