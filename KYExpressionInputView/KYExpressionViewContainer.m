@@ -112,16 +112,18 @@
                 break;
         }
         
-        // 下载完成
-        __weak typeof(self) weakSelf = self;
-        [expressionItem setImageDownloadCompletion:^(UIImage *image, NSError *error) {
-            if (weakSelf.expressionItem == expressionItem) {
-                if (image) {
-                    _imageView.image = image;
-                    [weakSelf setNeedsLayout];
+        // 异步加载图片
+        if ([expressionItem respondsToSelector:@selector(setImageDownloadCompletion:)]) {
+            __weak typeof(self) weakSelf = self;
+            [expressionItem setImageDownloadCompletion:^(UIImage *image, NSError *error) {
+                if (weakSelf.expressionItem == expressionItem) {
+                    if (image) {
+                        _imageView.image = image;
+                        [weakSelf setNeedsLayout];
+                    }
                 }
-            }
-        }];
+            }];
+        }
         
         [self setNeedsLayout];
     }
