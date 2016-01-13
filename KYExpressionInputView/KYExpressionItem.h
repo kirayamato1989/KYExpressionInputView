@@ -28,4 +28,6 @@
 
 - (instancetype)initWithEmoji:(NSString *)emoji;
 
+- (void)imageUploadCompleteWithUrlString:(NSString *)url;
+
 @end

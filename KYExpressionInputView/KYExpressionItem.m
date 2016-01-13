@@ -93,7 +93,7 @@
     return self;
 }
 
-#pragma mark NSCoding
+#pragma mark KYExpressionData
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.image forKey:NSStringFromSelector(@selector(image))];
@@ -126,6 +126,11 @@
         }
     }
     return _imageData;
+}
+
+#pragma mark public method
+- (void)imageUploadCompleteWithUrlString:(NSString *)url {
+    self.imageUrl = url;
 }
 
 @end
