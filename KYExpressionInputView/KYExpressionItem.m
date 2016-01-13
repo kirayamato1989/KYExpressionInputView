@@ -32,12 +32,12 @@
 @implementation KYExpressionItem
 
 + (instancetype)itemWithImage:(UIImage *)image url:(NSString *)url {
-    NSAssert(image&&url, @"image and url can not both be nil");
+    NSAssert(image||url, @"image and url can not both be nil");
     return [[self alloc] initWithImage:image url:url];
 }
 
 + (instancetype)itemWithImageData:(NSData *)data url:(NSString *)url {
-    NSAssert(data&&url, @"data and url can not both be nil");
+    NSAssert(data||url, @"data and url can not both be nil");
     return [[self alloc] initWithImageData:data url:url];
 }
 
@@ -55,7 +55,7 @@
 }
 
 - (instancetype)initWithImage:(UIImage *)image url:(NSString *)url {
-    NSAssert(image&&url, @"image and url can not both be nil");
+    NSAssert(image||url, @"image and url can not both be nil");
     if (self = [super init]) {
         _image = image;
         _imageUrl = url.copy;
