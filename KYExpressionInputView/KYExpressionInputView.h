@@ -115,6 +115,7 @@
                           column:(KYUIntegerOrientation)column
                         itemSize:(KYSizeOrientation)itemSize
                     itemSpacing:(KYFloatOrientation)itemSpacing
+                    lineSpacing:(KYFloatOrientation)lineSpacing
                     textPercent:(CGFloat)percent
                  backgroundColor:(UIColor *)color
                      borderWidth:(CGFloat)width;

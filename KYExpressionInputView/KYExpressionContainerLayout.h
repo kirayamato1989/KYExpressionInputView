@@ -67,7 +67,12 @@ BOOL KYFloatIsEqual(KYFloatOrientation, KYFloatOrientation);
 /**
  *  表情的页数
  */
-@property (nonatomic, assign) KYUIntegerOrientation numberOfPage;
+@property (nonatomic, assign, readonly) KYUIntegerOrientation numberOfPage;
+
+/**
+ *  行距
+ */
+@property (nonatomic, assign) KYFloatOrientation lineSpacing;
 
 /**
  *  表情间距

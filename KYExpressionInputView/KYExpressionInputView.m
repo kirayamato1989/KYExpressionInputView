@@ -24,6 +24,7 @@
 + (instancetype)modelWithItems:(NSArray <id<KYExpressionData>>*)items
                       itemSize:(KYSizeOrientation)itemSize
                    itemSpacing:(KYFloatOrientation)itemSpacing
+                   lineSpacing:(KYFloatOrientation)lineSpacing
                            row:(KYUIntegerOrientation)row
                         column:(KYUIntegerOrientation)column
                    textPercent:(CGFloat)percent
@@ -38,6 +39,7 @@
 + (instancetype)modelWithItems:(NSArray<id<KYExpressionData>> *)items
                       itemSize:(KYSizeOrientation)itemSize
                    itemSpacing:(KYFloatOrientation)itemSpacing
+                   lineSpacing:(KYFloatOrientation)lineSpacing
                            row:(KYUIntegerOrientation)row
                         column:(KYUIntegerOrientation)column
                    textPercent:(CGFloat)percent
@@ -53,6 +55,7 @@
     model.layout.numberOfRow = row;
     model.layout.borderWidth = width;
     model.layout.textHeightPercent = percent;
+    model.layout.lineSpacing = lineSpacing;
     model.backgroundColor = color;
     return model;
 }
@@ -166,12 +169,13 @@
                          column:(KYUIntegerOrientation)column
                        itemSize:(KYSizeOrientation)itemSize
                     itemSpacing:(KYFloatOrientation)itemSpacing
+                    lineSpacing:(KYFloatOrientation)lineSpacing
                     textPercent:(CGFloat)percent
                 backgroundColor:(UIColor *)color
                     borderWidth:(CGFloat)width {
     if (items.count == 0) return;
     
-    KYExpressionViewContainerModel *model = [KYExpressionViewContainerModel modelWithItems:items itemSize:itemSize itemSpacing:itemSpacing row:row column:column textPercent:percent backgroundColor:color borderWidth:width];
+    KYExpressionViewContainerModel *model = [KYExpressionViewContainerModel modelWithItems:items itemSize:itemSize itemSpacing:itemSpacing lineSpacing:lineSpacing row:row column:column textPercent:percent backgroundColor:color borderWidth:width];
     
     
     [self.modelArray addObject:model];
@@ -184,7 +188,7 @@
 
 - (void)addToolbarItemWithImage:(UIImage *)image title:(NSString *)title expressionPackage:(id<KYExpressionPackageProtocol>)package {
     if ([package numberOfItems] == 0) return;
-    KYExpressionViewContainerModel *model = [KYExpressionViewContainerModel modelWithItems:[package items] itemSize:KYSizeOrientationMake(CGSizeMake(60, 60), CGSizeMake(60, 60)) itemSpacing:KYFloatOrientationMake(15, 15) row:KYUIntegerOrientationMake(2, 2) column:KYUIntegerOrientationMake(4, 8) textPercent:0 backgroundColor:[UIColor clearColor] borderWidth:0];
+    KYExpressionViewContainerModel *model = [KYExpressionViewContainerModel modelWithItems:[package items] itemSize:KYSizeOrientationMake(CGSizeMake(60, 60), CGSizeMake(60, 60)) itemSpacing:KYFloatOrientationMake(15, 15) lineSpacing:KYFloatOrientationMake(15, 15) row:KYUIntegerOrientationMake(2, 2) column:KYUIntegerOrientationMake(4, 8) textPercent:0 backgroundColor:[UIColor clearColor] borderWidth:0];
     
     [self.modelArray addObject:model];
     
@@ -202,7 +206,7 @@
     container.frame = self.containerView.bounds;
     
     //
-    KYExpressionViewContainerModel *model = [KYExpressionViewContainerModel modelWithItems:[container items] itemSize:container.layout.itemSize itemSpacing:container.layout.itemSpacing row:container.layout.numberOfRow column:container.layout.numberOfColumn textPercent:0 backgroundColor:[UIColor clearColor] borderWidth:0];
+    KYExpressionViewContainerModel *model = [KYExpressionViewContainerModel modelWithItems:[container items] itemSize:container.layout.itemSize itemSpacing:container.layout.itemSpacing lineSpacing:container.layout.lineSpacing row:container.layout.numberOfRow column:container.layout.numberOfColumn textPercent:0 backgroundColor:[UIColor clearColor] borderWidth:0];
     
     [self.modelArray addObject:model];
     

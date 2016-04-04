@@ -34,13 +34,11 @@
     }
     
     
-    [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:KYUIntegerOrientationMake(4, 5) column:KYUIntegerOrientationMake(8, 14) itemSize:KYSizeOrientationMake(CGSizeMake(36, 36), CGSizeMake(36, 36)) itemSpacing:KYFloatOrientationMake(6, 8) textPercent:1 backgroundColor:[UIColor clearColor] borderWidth:0];
-    
-    
+    [inputView addToolbarItemWithImage:nil title:@"表情" items:emojiItems row:KYUIntegerOrientationMake(4, 5) column:KYUIntegerOrientationMake(8, 14) itemSize:KYSizeOrientationMake(CGSizeMake(36, 36), CGSizeMake(36, 36)) itemSpacing:KYFloatOrientationMake(6, 8) lineSpacing:KYFloatOrientationMake(5.f, 5.f) textPercent:1 backgroundColor:[UIColor clearColor] borderWidth:0];
     
 //    NSString *iconPath = [kExpressionBundle pathForResource:@"icon" ofType:@"jpg"];
     
-//    [inputView addToolbarItemWithImage:[UIImage imageWithContentsOfFile:iconPath] title:nil items:items row:KYUIntegerOrientationMake(2, 2) column:KYUIntegerOrientationMake(4, 6) itemSize:KYSizeOrientationMake(CGSizeMake(66, 80), CGSizeMake(56, 56)) itemSpacing:KYFloatOrientationMake(20, 20) textPercent:0.15 backgroundColor:[UIColor whiteColor] borderWidth:0];
+//    [inputView addToolbarItemWithImage:image2 title:nil items:tmp.copy row:KYUIntegerOrientationMake(2, 2) column:KYUIntegerOrientationMake(4, 6) itemSize:KYSizeOrientationMake(CGSizeMake(66, 66), CGSizeMake(56, 56)) itemSpacing:KYFloatOrientationMake(20, 20) lineSpacing:KYFloatOrientationMake(20, 10.f) textPercent:0.15 backgroundColor:[UIColor whiteColor] borderWidth:2];
     
     // add by a KYExpressionViewContainer
 //    KYExpressionContainerLayout *layout = [[KYExpressionContainerLayout alloc] init];
@@ -53,7 +51,6 @@
     
     
     inputView.delegate = self;
-    
     
     [inputView setToolbarSendButtonHidden:NO animated:NO];
     self.textField.inputView = inputView;

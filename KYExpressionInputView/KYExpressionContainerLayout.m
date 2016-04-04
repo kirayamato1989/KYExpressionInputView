@@ -144,9 +144,10 @@ inline BOOL KYFloatIsEqual(KYFloatOrientation value1, KYFloatOrientation value2)
         NSUInteger numberOfRow = KYUIntegerForCurrentOrientation(self.numberOfRow);
         NSUInteger numberOfColumn = KYUIntegerForCurrentOrientation(self.numberOfColumn);
         CGFloat itemSpacing = KYFloatForCurrentOrientation(self.itemSpacing);
+        CGFloat lineSpacing = KYFloatForCurrentOrientation(self.lineSpacing);
         
         
-        CGFloat topSpacing = (self.collectionView.bounds.size.height - (numberOfRow*itemSize.height + (numberOfRow - 1)*itemSpacing))/2.f;
+        CGFloat topSpacing = (self.collectionView.bounds.size.height - (numberOfRow*itemSize.height + (numberOfRow - 1)*lineSpacing))/2.f;
         
         CGFloat letfSpacing = (self.collectionView.bounds.size.width - (numberOfColumn*itemSize.width + (numberOfColumn - 1)*itemSpacing))/2.f;
         
@@ -154,7 +155,7 @@ inline BOOL KYFloatIsEqual(KYFloatOrientation value1, KYFloatOrientation value2)
         if (topSpacing<0) {
             itemSize.height -= ceilf(fabs(2*topSpacing)/numberOfRow);
             
-            topSpacing = (self.collectionView.bounds.size.height - (numberOfRow*itemSize.height + (numberOfRow - 1)*itemSpacing))/2.f;
+            topSpacing = (self.collectionView.bounds.size.height - (numberOfRow*itemSize.height + (numberOfRow - 1)*lineSpacing))/2.f;
         }
         
         if (letfSpacing<0) {
@@ -163,20 +164,16 @@ inline BOOL KYFloatIsEqual(KYFloatOrientation value1, KYFloatOrientation value2)
             letfSpacing = (self.collectionView.bounds.size.width - (numberOfColumn*itemSize.width + (numberOfColumn - 1)*itemSpacing))/2.f;
         }
         
-        NSAssert(numberOfColumn*numberOfRow, @"row or column can not be zero");
-        
-        
-        
         NSUInteger numberOfPage = (numberOfItem/(numberOfRow*numberOfColumn)) + (numberOfItem%(numberOfRow*numberOfColumn)>0?1:0);
         if (isPortrait) {
             KYUIntegerOrientation newValue = self.numberOfPage;
             newValue.uintegerForOrientationPortrait = numberOfPage;
-            self.numberOfPage = newValue;
+            _numberOfPage = newValue;
         }
         else{
             KYUIntegerOrientation newValue = self.numberOfPage;
             newValue.uintegerForOrientationLandscape = numberOfPage;
-            self.numberOfPage = newValue;
+            _numberOfPage = newValue;
         }
         
         
@@ -194,7 +191,7 @@ inline BOOL KYFloatIsEqual(KYFloatOrientation value1, KYFloatOrientation value2)
             
             NSUInteger column = indexAtPage%numberOfColumn;
             
-            attributes.frame = CGRectMake(page * self.collectionView.bounds.size.width + letfSpacing + column*(itemSize.width + itemSpacing) , topSpacing + row*(itemSize.height + itemSpacing), itemSize.width, itemSize.height);
+            attributes.frame = CGRectMake(page * self.collectionView.bounds.size.width + letfSpacing + column*(itemSize.width + itemSpacing) , topSpacing + row*(itemSize.height + lineSpacing), itemSize.width, itemSize.height);
 
             [newCache addObject:attributes];
         }

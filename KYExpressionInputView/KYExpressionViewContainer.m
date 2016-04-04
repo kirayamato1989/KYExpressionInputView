@@ -271,9 +271,9 @@
         _layout.itemSpacing = layout.itemSpacing;
         _layout.numberOfColumn = layout.numberOfColumn;
         _layout.numberOfRow = layout.numberOfRow;
-        _layout.numberOfPage = layout.numberOfPage;
         _layout.borderWidth = layout.borderWidth;
         _layout.textHeightPercent = layout.textHeightPercent;
+        _layout.lineSpacing = layout.lineSpacing;
     }
 }
 
