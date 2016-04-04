@@ -376,6 +376,17 @@
     }
 }
 
+- (void)setLineSpacing:(KYFloatOrientation)lineSpacing {
+    if (!KYFloatIsEqual(_lineSpacing, lineSpacing)) {
+        for (KYExpressionViewContainerModel *model in self.modelArray) {
+            model.layout.lineSpacing = lineSpacing;
+            if ([self.currentDisplayExpressionViewContainer isKindOfClass:[KYExpressionViewContainer class]]) {
+                KYExpressionContainerLayout *layout = [(KYExpressionViewContainer *)self.currentDisplayExpressionViewContainer layout];
+                layout.lineSpacing = lineSpacing;
+            }
+        }
+    }
+}
 
 #pragma mark Boolen Setter
 

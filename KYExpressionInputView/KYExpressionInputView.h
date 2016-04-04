@@ -36,6 +36,8 @@
 
 @property (nonatomic, assign) KYSizeOrientation itemSize;
 
+@property (nonatomic, assign) KYFloatOrientation lineSpacing;
+
 @property (nonatomic, assign) id<KYExpressionInputViewDelegate> delegate;
 
 @property (nonatomic, weak) UITextView *textView;
