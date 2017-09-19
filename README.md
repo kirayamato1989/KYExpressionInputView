@@ -1,5 +1,9 @@
 # KYExpressionInputView
 
+## Pod
+``` 
+pod 'KYExpressionInputView'
+``` 
 ## Inilization
 
 ``` 
