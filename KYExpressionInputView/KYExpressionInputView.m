@@ -227,7 +227,7 @@
 }
 
 - (KYExpressionViewContainer *)containerViewAtIndex:(NSUInteger)index {
-    return [self.modelArray[index] container];
+    return (KYExpressionViewContainer *)[self.modelArray[index] container];
 }
 
 - (void)setToolbarSendButtonHidden:(BOOL)hidden animated:(BOOL)animated {
@@ -253,7 +253,7 @@
 #pragma mark private method
 
 - (void)showContainerAtIndex:(NSUInteger)index {
-    KYExpressionViewContainer *view = [self.modelArray[index] container];
+    KYExpressionViewContainer *view = (KYExpressionViewContainer *)[self.modelArray[index] container];
     if (view == self.currentDisplayExpressionViewContainer) return;
     
     self.currentDisplayExpressionViewContainer.hidden = YES;

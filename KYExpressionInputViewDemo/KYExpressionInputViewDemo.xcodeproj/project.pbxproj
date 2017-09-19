@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6598A3E1F71223E00224A85 /* NSBundle+KYExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = D6598A3D1F71223E00224A85 /* NSBundle+KYExpression.m */; };
 		D680DBBA1C3513410049A055 /* ISEmojiList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D680DBB91C3513410049A055 /* ISEmojiList.plist */; };
 		D6D19BAA1BFF11B900B35BE8 /* QQ20151120-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D19BA81BFF11B900B35BE8 /* QQ20151120-1@2x.png */; };
 		D6D19BAB1BFF11B900B35BE8 /* QQ20151120-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D19BA91BFF11B900B35BE8 /* QQ20151120-0@2x.png */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D6598A3C1F71223E00224A85 /* NSBundle+KYExpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KYExpression.h"; sourceTree = "<group>"; };
+		D6598A3D1F71223E00224A85 /* NSBundle+KYExpression.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+KYExpression.m"; sourceTree = "<group>"; };
 		D680DBB91C3513410049A055 /* ISEmojiList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ISEmojiList.plist; path = KYExpressionInputViewDemo/ISEmojiList.plist; sourceTree = SOURCE_ROOT; };
 		D6D19BA81BFF11B900B35BE8 /* QQ20151120-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ20151120-1@2x.png"; sourceTree = "<group>"; };
 		D6D19BA91BFF11B900B35BE8 /* QQ20151120-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ20151120-0@2x.png"; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				D6EE8AF21BE8B8C500855E29 /* UIView+KYFrameAdjust.m */,
 				D6EE8AF31BE8B8C500855E29 /* UIView+KYShadow.h */,
 				D6EE8AF41BE8B8C500855E29 /* UIView+KYShadow.m */,
+				D6598A3C1F71223E00224A85 /* NSBundle+KYExpression.h */,
+				D6598A3D1F71223E00224A85 /* NSBundle+KYExpression.m */,
 				D6EE8AD91BE8B8C500855E29 /* KYExpressionBundle.bundle */,
 			);
 			name = KYExpressionInputView;
@@ -268,6 +273,7 @@
 				D6EE8AF91BE8B8C500855E29 /* KYExpressionStore.m in Sources */,
 				D6EE8A111BE894F700855E29 /* ViewController.m in Sources */,
 				D6EE8AF61BE8B8C500855E29 /* KYExpressionContainerLayout.m in Sources */,
+				D6598A3E1F71223E00224A85 /* NSBundle+KYExpression.m in Sources */,
 				D6EE8AFB1BE8B8C500855E29 /* KYExpressionViewContainer.m in Sources */,
 				D6EE8B001BE8B8C500855E29 /* UIView+KYFrameAdjust.m in Sources */,
 				D6EE8A0E1BE894F700855E29 /* AppDelegate.m in Sources */,

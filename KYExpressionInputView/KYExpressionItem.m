@@ -11,6 +11,7 @@
 #import "NSData+KYImageContentType.h"
 #import "UIImage+KYNSData.h"
 #import "KYExpressionConstant.h"
+#import "NSBundle+KYExpression.h"
 
 
 @interface KYExpressionItem ()
@@ -46,7 +47,7 @@
 }
 
 + (instancetype)deleteItem {
-    NSString *path = [kExpressionBundle pathForResource:@"ky_expression_delete" ofType:@"png"];
+    NSString *path = [[NSBundle kye_bundle] pathForResource:@"ky_expression_delete" ofType:@"png"];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     image = [UIImage imageWithCGImage:image.CGImage scale:[UIScreen mainScreen].scale orientation:image.imageOrientation];
     KYExpressionItem *item = [self itemWithImage:image url:nil];

@@ -57,7 +57,16 @@
 }
 
 - (void)inputView:(KYExpressionInputView *)inputView didSelectExpression:(id<KYExpressionData>)expression atIndex:(NSUInteger)index container:(KYExpressionViewContainer *)container {
-    
+    switch (expression.dataType) {
+        case kExpressionDataTypeEmoji:
+            [self.textField insertText:expression.text];
+            break;
+        case kExpressionDataTypeDelete:
+            [self.textField deleteBackward];
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
